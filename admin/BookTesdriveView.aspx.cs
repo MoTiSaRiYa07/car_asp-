@@ -148,5 +148,12 @@ public partial class admin_Default555 : System.Web.UI.Page
             Response.End();
         }
     }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+
+        Response.Redirect("~/PYMENT/PYMENTSEND.aspx"); // Change the path to your desired file
+
+    }
 }
        

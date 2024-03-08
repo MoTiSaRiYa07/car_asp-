@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Xml.Linq;
 
 public partial class user_testdrive : System.Web.UI.Page
 {
@@ -37,8 +38,12 @@ public partial class user_testdrive : System.Web.UI.Page
         cmd = new SqlCommand(str, x.cn);
         cmd.ExecuteNonQuery();
 
+        Response.Redirect("~/user/pyment/Pyment.aspx");
+        //Response.Redirect(string.Format("~/user/pyment/che.aspx?Name={0}&Lname={1}&date={2}", txtname, txtlname.Text, txtdate.Text));
 
-        
+
+
+
     }
     protected void Calendar1_SelectionChanged(object sender, EventArgs e)
     {
@@ -81,5 +86,7 @@ public partial class user_testdrive : System.Web.UI.Page
 
         ddlcity.DataBind();
         x.cnclose();
+
+
     }
 }

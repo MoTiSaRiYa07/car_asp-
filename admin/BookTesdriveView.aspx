@@ -124,6 +124,7 @@
 
            <asp:Button ID="Button5" runat="server" BackColor="#FF9966" BorderStyle="Solid" Font-Bold="True" Font-Names="Algerian" Font-Size="15pt" ForeColor="#FF0066" OnClick="Button5_Click" Text="Downloader PDF " />
 
+                   <asp:Button ID="Button2" runat="server" BackColor="#FF9966" BorderStyle="Solid" Font-Bold="True" Font-Names="Algerian" Font-Size="15pt" ForeColor="#FF0066"  Text=" SEND MAIIL" OnClick="Button2_Click" />
 
 
 
