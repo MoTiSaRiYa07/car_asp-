@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Ankush.css">
+    <link rel="stylesheet" href="StyleSheet.css">
    
     <title>PYMENT SEND FROM</title>
 </head>
