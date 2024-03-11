@@ -130,6 +130,8 @@
             <ul class="sub">
               <li><a class="" href="user_detail.aspx">Manage User Detail</a></li>
                <li><a class="" href="car_testdrive.aspx">Testdrive bookings</a></li>
+             <li><a class="" href="BookTesdriveView.aspx">TESTDRIVE DATA SEND MAIL</a></li>
+
             </ul>
           </li>
           <li class="sub-menu">

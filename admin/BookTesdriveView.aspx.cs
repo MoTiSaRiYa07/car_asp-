@@ -18,15 +18,15 @@ public partial class admin_Default555 : System.Web.UI.Page
     {
 
         Button3.Visible = false;
-        //Button2.Visible = false;
         Button5.Visible = false;
+        Button2.Visible = false;
     }
 
     protected void Button1_Click(object sender, EventArgs e)
     {
         Button3.Visible = true;
-        //Button2.Visible = true;
         Button5.Visible = true;
+        Button2.Visible = true;
 
         String mycon = "Data Source=JAYRAMAPIR\\SQLEXPRESS04;Initial Catalog=E:\\AUTO MOBILE\\APP_DATA\\DATABASE.MDF;Integrated Security=True;Encrypt=False";
 
@@ -99,6 +99,8 @@ public partial class admin_Default555 : System.Web.UI.Page
 
                     // Add text to the document
                     document.Add(new Paragraph("TEST DRIVE ID SHOW DATA"));
+                    document.Add(new Paragraph("TEST DRIVE BOOK SUESFULL"));
+
                     document.Add(Chunk.NEWLINE); // Add new line
 
                     // Add panel data to the document
@@ -106,8 +108,8 @@ public partial class admin_Default555 : System.Web.UI.Page
                     table.WidthPercentage = 100;
 
                     // Add labels and their corresponding data from the panel
-                    string[] labels = { "Your ENTER ID ===", "Your FIRST NAME===", "Your LAST NAME===", "Your PHONE NUMBER===", "Your COMPANY ID===", "Your MODEL ID===", "Your CITY===", "Your BOOKING DATE===", "Your DEALER ID===" };
-                    Label[] dataLabels = { Labelid, Labelfn, Labelln, Labelcon, Labelci, Labelmi, Labelcity, Labeldate, Labeldid };
+                    string[] labels = { "Your ENTER ID ", "Your FIRST NAME", "Your LAST NAME", "Your PHONE NUMBER", "Your COMPANY ID", "Your MODEL ID", "Your CITY", "Your BOOKING DATE", "Your DEALER ID" };
+                    Label[] dataLabels = { Labelid, Labelfn, Labelln, Labelcon, Labelci, Labelmi, Labelcity, Labeldate, Labeldid,Label23 };
 
                     for (int i = 0; i < labels.Length; i++)
                     {
@@ -123,9 +125,11 @@ public partial class admin_Default555 : System.Web.UI.Page
                     document.Add(table);
 
                     // Add image to the document
-                    string imagePath = Server.MapPath("~/admin/company_logo/LOGO3.jpg");
+                    
+                    string imagePath = Server.MapPath("~/admin/company_logo/LOGO.jpg");
                     iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(imagePath);
-                    document.Add(img);
+                    img.ScaleToFit(200f, 200f); // Adjust width and height here
+                        document.Add(img);
                 }
                 catch (Exception ex)
                 {
@@ -152,7 +156,7 @@ public partial class admin_Default555 : System.Web.UI.Page
     protected void Button2_Click(object sender, EventArgs e)
     {
 
-        Response.Redirect("~/PYMENT/PYMENTSEND.aspx"); // Change the path to your desired file
+        Response.Redirect("~/admin/PAY/PYMENTSEND.aspx"); // Change the path to your desired file
 
     }
 }

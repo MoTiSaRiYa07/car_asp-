@@ -113,7 +113,9 @@
                 <td class="auto-style5" contenteditable="false">
                     
                     <%--<asp:Image ID="Image1" runat="server" ImageUrl="~/admin/company_logo/LOGO3.jpg" />--%>
-                    <img src="company_logo/LOGO3.jpg" />
+                    <asp:Label ID="Label23" runat="server" Text="TESTDRIVE SUESSFULL BOOK" Font-Bold="True" Font-Italic="False" Font-Names="Algerian" ForeColor="Black"></asp:Label>
+                    &nbsp;<br />
+                    <asp:Image ID="Image2" runat="server" Height="221px" ImageUrl="~/admin/company_logo/LOGO.jpg" Width="184pt" />
                     
                 </td>
             </tr>
