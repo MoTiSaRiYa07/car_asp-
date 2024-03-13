@@ -2,6 +2,7 @@
 using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
 using System;
+using System.Activities.Statements;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -97,9 +98,22 @@ public partial class admin_Default555 : System.Web.UI.Page
                     // Open the Document for writing
                     document.Open();
 
+
+
+                    Paragraph senderInfo = new Paragraph();
+                    senderInfo.Alignment = Element.ALIGN_RIGHT;
+                    senderInfo.Add(new Chunk("SENDER DETAILS\n", new Font(Font.FontFamily.HELVETICA, 20)));
+                    senderInfo.Add(new Chunk("COMPANY:CAR TESTDRIVE BOOKING\n", new Font(Font.FontFamily.HELVETICA, 10)));
+                    senderInfo.Add(new Chunk("NAME:ANKUSHMOTISARIYA&&TEAM MEMBER\n", new Font(Font.FontFamily.HELVETICA, 10)));
+                    senderInfo.Add(new Chunk("ADDRESS:SURAT\n", new Font(Font.FontFamily.HELVETICA, 10)));
+                    senderInfo.Add(new Chunk("CONTACTNUMBER:8849048885\n", new Font(Font.FontFamily.HELVETICA, 10)));
+                    senderInfo.Add(new Chunk("EMAIL:KINGOFEMBROIDERY@GMAIL.COM\n", new Font(Font.FontFamily.HELVETICA, 10)));
+                    document.Add(senderInfo);
+
+
                     // Add text to the document
-                    document.Add(new Paragraph("TEST DRIVE ID SHOW DATA"));
-                    document.Add(new Paragraph("TEST DRIVE BOOK SUESFULL"));
+                    document.Add(new Paragraph("YOUR INFORMATION"));
+                    document.Add(new Paragraph("TEST DRIVE BOOK SUESSFULL"));
 
                     document.Add(Chunk.NEWLINE); // Add new line
 
@@ -109,7 +123,7 @@ public partial class admin_Default555 : System.Web.UI.Page
 
                     // Add labels and their corresponding data from the panel
                     string[] labels = { "Your ENTER ID ", "Your FIRST NAME", "Your LAST NAME", "Your PHONE NUMBER", "Your COMPANY ID", "Your MODEL ID", "Your CITY", "Your BOOKING DATE", "Your DEALER ID" };
-                    Label[] dataLabels = { Labelid, Labelfn, Labelln, Labelcon, Labelci, Labelmi, Labelcity, Labeldate, Labeldid,Label23 };
+                    Label[] dataLabels = { Labelid, Labelfn, Labelln, Labelcon, Labelci, Labelmi, Labelcity, Labeldate, Labeldid, Label23 };
 
                     for (int i = 0; i < labels.Length; i++)
                     {
@@ -125,12 +139,15 @@ public partial class admin_Default555 : System.Web.UI.Page
                     document.Add(table);
 
                     // Add image to the document
-                    
+
                     string imagePath = Server.MapPath("~/admin/company_logo/LOGO.jpg");
                     iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(imagePath);
                     img.ScaleToFit(200f, 200f); // Adjust width and height here
-                        document.Add(img);
-                }
+                    document.Add(img);
+
+
+                     }
+
                 catch (Exception ex)
                 {
                     // Handle exception

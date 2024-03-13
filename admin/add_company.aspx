@@ -50,20 +50,13 @@
         return validExtensions.indexOf(fileExtension) !== -1;
     }
 
-     
-    
-
 </script>
 
 
-       
 
 
 
-    
-
-    
-  <section id="main-content">
+<section id="main-content">
       <section class="wrapper">
         <div class="row">
           <div class="col-lg-12">
@@ -146,6 +139,7 @@
                               <%-- <button class="btn btn-primary" type="submit">Submit</button>--%>
                                   <asp:Button ID="btnsubmit" runat="server" Text="Submit" BackColor="#333333"  class="btn btn-primary" 
                                     onclick="btnsubmit_Click" OnClientClick="return submitForm();" ></asp:Button>
+                       <asp:Label ID="lblStatus" runat="server" Text="" ForeColor="Red"></asp:Label>
 
                             </div>
               </div>

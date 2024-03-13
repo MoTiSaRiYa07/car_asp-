@@ -15,7 +15,7 @@
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- bootstrap theme -->
+  <!-- bootstrap theme  -->
   <link href="css/bootstrap-theme.css" rel="stylesheet">
   <!--external css-->
   <!-- font icon -->

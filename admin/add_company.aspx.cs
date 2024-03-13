@@ -9,6 +9,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.text;
 using iTextSharp.text.html.simpleparser;
 using System.Web;
+using System.Xml.Linq;
 
 
 public partial class admin_add_company : System.Web.UI.Page
@@ -24,6 +25,8 @@ public partial class admin_add_company : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+
+
         if (Session["aname"] == null)
         {
             Response.Redirect("login.aspx");
@@ -34,13 +37,35 @@ public partial class admin_add_company : System.Web.UI.Page
             {
                 PopulateData();
             }
+
         }
 
+        
+
     }
+
+    
+
     protected void btnsubmit_Click(object sender, EventArgs e)
     {
+
+
+        if (IsCompanyNameExists(txtcname.Text))
+        {
+            lblStatus.Text = "Company name already exists. Please choose a different one.";
+            return;
+        }
+
+
+
+        //else  if (Checkname() == false)
+        //    {
+        //        lblStatus.Text = "new name";
+        //        txtcname.BackColor = System.Drawing.Color.Black;
+
+        //    }
         string str;
-        Boolean msg = false;
+        Boolean msg = true;
 
 
         str = Server.MapPath("company_logo/");
@@ -53,9 +78,102 @@ public partial class admin_add_company : System.Web.UI.Page
         }
 
 
-        qry = "insert into tbl_comp values('" + txtcname.Text + "','" + fu1.FileName + "'," + ddlstatus.SelectedValue + ")";
-        x.compins(qry);
+
+        //if (Checkname() == true)
+        //{
+        //    lblStatus.Text = "YOUR COMPNY NAME ARE SAME";
+        //    txtcname.BackColor = System.Drawing.Color.Red;
+
+        //}
+
+       //else if (Checkname() == true)
+       // {
+       //     lblStatus.Text = "YOUR new name";
+       //     txtcname.BackColor = System.Drawing.Color.Black;
+
+       // }
+
+        //else
+        //{
+
+        //    txtcname.BackColor = System.Drawing.Color.Green;
+        //    lblStatus.Text = "NEW COMPNY NAME ARE SUESFULL INSERT";
+        //    txtcname.Visible = true;
+        //    fu1.Visible = false;
+        //    ddlstatus.Visible = false;  
+            
+            qry = "insert into tbl_comp values('" + txtcname.Text + "','" + fu1.FileName + "'," + ddlstatus.SelectedValue + ")";
+            x.compins(qry);
+        }
+
+    private bool IsCompanyNameExists(string companyName)
+    {
+        bool exists = false;
+        using (SqlConnection connection = new SqlConnection("Data Source=JAYRAMAPIR\\SQLEXPRESS04;Initial Catalog=\"E:\\AUTO MOBILE\\APP_DATA\\DATABASE.MDF\";Integrated Security=True;Encrypt=False"))
+        {
+            string query = "SELECT COUNT(*) FROM tbl_comp WHERE compname = @CompanyName";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@CompanyName", companyName);
+
+            try
+            {
+                connection.Open();
+                int count = (int)command.ExecuteScalar();
+                exists = (count > 0);
+
+                if (!exists)
+                {
+                    // Add your code here to add the new company to the database
+                    // For example:
+                    // AddNewCompany(companyName);
+
+                    // Set label status for successful addition
+                    lblStatus.Text = "Company added successfully.";
+                    lblStatus.ForeColor = System.Drawing.Color.Green;
+                    lblStatus.Visible = true;
+                   txtcname.BackColor = System.Drawing.Color.Green;
+
+
+                }
+                else
+                {
+                    // Company already exists
+                    lblStatus.Text = "Company already exists.";
+                    lblStatus.ForeColor = System.Drawing.Color.Red;
+                    lblStatus.Visible = true;
+                    //txtcname.BackColor = System.Drawing.Color.Red;
+
+                }
+            }
+            
+            catch (Exception ex)
+            {
+                lblStatus.Text = "An error occurred while adding the company.";
+                lblStatus.ForeColor = System.Drawing.Color.Red;
+                lblStatus.Visible = true;
+            }
+
+            //    finally
+            //    {
+            //        // Clear the status label message
+            //        lblStatus.Text = "";
+            //        lblStatus.Visible = false;
+            //    }
+
+            //finally
+            //{
+            //    // Clear the status label message
+            //    lblStatus.Text = "";
+            //    lblStatus.Visible = false;
+            //}
+        }
+    
+     
+
+        return exists;
     }
+
+    
 
     protected void btnSearch_Click(object sender, EventArgs e)
     {
@@ -206,10 +324,29 @@ public partial class admin_add_company : System.Web.UI.Page
 
     }
 
-   
 
-   
-   
+    //private Boolean Checkname()
+    //{
+
+    //    Boolean nameavailble = false;
+    //    SqlConnection cn = new SqlConnection(@"Data Source=JAYRAMAPIR\SQLEXPRESS04;Initial Catalog=""E:\AUTO MOBILE\APP_DATA\DATABASE.MDF"";Integrated Security=True;Encrypt=False");
+    //    string query = "select * from  tbl_comp where compname ='" + txtcname.Text + "'";
+    //    SqlCommand cmd = new SqlCommand(query, cn);
+    //    SqlDataAdapter da = new SqlDataAdapter();
+    //    da.SelectCommand = cmd;
+    //    DataSet ds = new DataSet();
+    //    da.Fill(ds);
+    //    if (ds.Tables[0].Rows.Count > 0)
+    //    {
+    //        nameavailble = true;
+    //    }
+    //    cn.Close();
+    //    return nameavailble;
+    //}
+
+
+
+
 }
 
     
