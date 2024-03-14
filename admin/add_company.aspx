@@ -110,7 +110,7 @@
                                 <div class="col-lg-3">
                                        <asp:DropDownList ID="ddlstatus" runat="server" class="form-control m-bot15">
                                            <asp:ListItem Text="Yes" Value="0"></asp:ListItem>
-                                           <asp:ListItem Text="No" Value="1"></asp:ListItem>
+<%--                                           <asp:ListItem Text="No" Value="1"></asp:ListItem>--%>
                                        </asp:DropDownList>
                                 </div>
                                          

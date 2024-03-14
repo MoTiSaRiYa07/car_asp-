@@ -68,6 +68,28 @@
 			</div>
   
 
+                        		<div class="year">
+			
+			<div>
+				
+                <asp:TextBox ID="txtemail" runat="server" required="" 
+ style= "outline: none;color: #999;
+ padding: 10px 10px 10px 30px;
+margin: 0;
+width: 100%;
+border: none;
+border-bottom: 2px solid #686464;
+-webkit-appearance: none;
+font-family: 'Open Sans', sans-serif;" placeholder="email"></asp:TextBox>
+				
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>		
+			 <div class="year">
+			
+			<div>   
+
       <div class="city">
 				
 				<div>

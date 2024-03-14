@@ -17,11 +17,11 @@ public partial class user_pyment_che : System.Web.UI.Page
     public string email;
     protected void Page_Load(object sender, EventArgs e)
     {
-        amount = (Convert.ToInt32(Request.QueryString["Amount"]) * 100).ToString();
-        //contact = Request.QueryString["Contact"].ToString();
-        name = Request.QueryString["Name"].ToString();
-        //product = Request.QueryString["Product"].ToString();
-        email = Request.QueryString["Email"].ToString();
+        //amount = (Convert.ToInt32(Request.QueryString["Amount"]) * 100).ToString();
+        ////contact = Request.QueryString["Contact"].ToString();
+        //name = Request.QueryString["Name"].ToString();
+        ////product = Request.QueryString["Product"].ToString();
+        //email = Request.QueryString["Email"].ToString();
 
         Dictionary<string, object> input = new Dictionary<string, object>();
         input.Add("amount", amount);

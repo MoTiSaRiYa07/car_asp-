@@ -49,6 +49,10 @@
 									<td align="center" style=" width:8em; height:1em; max-height:1em;  padding-top:.5em; font-size:20px; padding-right:9em; color:#565656; padding-bottom:.5em;" > <asp:Label ID="lblpno" runat="server" Text='<%#Eval("phoneno") %>'></asp:Label></td>
 									
 								</tr>
+                                <tr>
+				      <td align="center" style=" width:8em; height:1em; max-height:1em;  padding-top:.5em; font-size:20px; padding-right:9em; color:#565656; padding-bottom:.5em;" > <asp:Label ID="Label1" runat="server" Text='<%#Eval("email") %>'></asp:Label></td>
+				
+</tr>
 								<tr>
 									<td align="center" style="width:8em;  height:1em; max-height:1em; padding-top:.5em;  height:1em; max-height:1em; font-size:20px; padding-right:9em; color:#565656; padding-bottom:.5em;"> <asp:Label ID="lblcomp" runat="server" Text='<%#Eval("compname") %>'></asp:Label></code>&nbsp;<asp:Label ID="lblmodel" runat="server" Text='<%#Eval("modelname") %>'></asp:Label></td>
 								</tr>
@@ -62,7 +66,7 @@
                                       								   
                                                                        
                                                                        
-                                        <a href='confirm1.aspx?uname=<%#Eval("user_name")%>'  >
+                                        <a href='confirm1.aspx?uname=<%#Eval("user_name")%>&email=<%#Eval("email")%>'  >
 
                                             <asp:Label ID="lblconfirm" runat="server" Text="Confirm" style=" background-color:#333333;" class="btn btn-primary aos-init aos-animate"></asp:Label> </a> </td>
                                                                                  

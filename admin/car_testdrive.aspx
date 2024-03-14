@@ -21,6 +21,7 @@
 <asp:BoundField DataField="user_name" HeaderText="First Name" 
             SortExpression="user_name"></asp:BoundField>
 <asp:BoundField DataField="last_name" HeaderText="Last Name" SortExpression="last_name"></asp:BoundField>
+<asp:BoundField DataField="email" HeaderText="Email" SortExpression="email"></asp:BoundField>
 <asp:BoundField DataField="phoneno" HeaderText="Phone No" SortExpression="phoneno"></asp:BoundField>
 <asp:BoundField DataField="compid" HeaderText="Company ID" SortExpression="compid"></asp:BoundField>
 <asp:BoundField DataField="modelid" HeaderText="Model ID" SortExpression="modelid"></asp:BoundField>
@@ -41,16 +42,18 @@
 </asp:GridView>
  <asp:SqlDataSource runat="server" 
         ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-        DeleteCommand="DELETE FROM [tbl_testdrive] WHERE [testdrive_id] = @testdrive_id" 
-        InsertCommand="INSERT INTO [tbl_testdrive] ([user_name], [last_name], [phoneno], [compid], [modelid], [city], [date], [dealerid]) VALUES (@user_name, @last_name, @phoneno, @compid, @modelid, @city, @date, @time, @dealerid)" 
-        SelectCommand="SELECT [testdrive_id], [user_name], [last_name], [phoneno], [compid], [modelid], [city], [date], [dealerid] FROM [tbl_testdrive]" 
-        UpdateCommand="UPDATE [tbl_testdrive] SET [user_name] = @user_name, [last_name] = @last_name, [phoneno] = @phoneno, [compid] = @compid, [modelid] = @modelid, [city] = @city, [date] = @date, [dealerid] = @dealerid WHERE [testdrive_id] = @testdrive_id" 
+        DeleteCommand="DELETE FROM [tbl_testdrive3] WHERE [testdrive_id] = @testdrive_id" 
+        InsertCommand="INSERT INTO [tbl_testdrive3] ([user_name], [last_name], [email],[phoneno], [compid], [modelid], [city], [date], [dealerid]) VALUES (@user_name, @last_name, @email, @phoneno, @compid, @modelid, @city, @date, @time, @dealerid)" 
+        SelectCommand="SELECT [testdrive_id], [user_name], [last_name], [email], [phoneno], [compid], [modelid], [city], [date], [dealerid] FROM [tbl_testdrive3]" 
+        UpdateCommand="UPDATE [tbl_testdrive3] SET [user_name] = @user_name, [last_name] = @last_name, [email] = @email, [phoneno] = @phoneno, [compid] = @compid, [modelid] = @modelid, [city] = @city, [date] = @date, [dealerid] = @dealerid WHERE [testdrive_id] = @testdrive_id" 
         ID="SqlDataSource1"><DeleteParameters>
 <asp:Parameter Name="testdrive_id" Type="Int32"></asp:Parameter>
 </DeleteParameters>
 <InsertParameters>
 <asp:Parameter Name="user_name" Type="String"></asp:Parameter>
 <asp:Parameter Name="last_name" Type="String"></asp:Parameter>
+    <asp:Parameter Name="email" Type="String"></asp:Parameter>
+
 <asp:Parameter Name="phoneno" Type="String"></asp:Parameter>
 <asp:Parameter Name="compid" Type="Int32"></asp:Parameter>
 <asp:Parameter Name="modelid" Type="Int32"></asp:Parameter>
@@ -62,6 +65,8 @@
 <UpdateParameters>
 <asp:Parameter Name="user_name" Type="String"></asp:Parameter>
 <asp:Parameter Name="last_name" Type="String"></asp:Parameter>
+    <asp:Parameter Name="email" Type="String"></asp:Parameter>
+
 <asp:Parameter Name="phoneno" Type="String"></asp:Parameter>
 <asp:Parameter Name="compid" Type="Int32"></asp:Parameter>
 <asp:Parameter Name="modelid" Type="Int32"></asp:Parameter>
@@ -87,7 +92,6 @@
 
   <asp:Button ID="Button1" runat="server" Text="Genrate pdf"
        style="color: red; font-size: 20px; width: 300px; height: 50px; text-align: center; display: block; margin: 0 auto;" OnClick="Button1_Click1" />
-<asp:Button ID="Sendmail" runat="server" Text="Sendmail" />
           
 
    </section>

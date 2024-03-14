@@ -44,7 +44,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				         <div id="sidebar"> 
 						     <h4 class="menu">Menu</h4>
 						          <ul>
-							   
+				                <li><a href="home.aspx"><span>HOME</span></a></li>
+
 									  <li><a href="find_car.aspx"><span>Find New Cars</span></a></li>
 									  <li><a href="testdrive.aspx"><span>Book Test drive</span></a></li>
 									  

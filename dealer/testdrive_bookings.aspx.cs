@@ -12,6 +12,7 @@ public partial class dealer_testdrive_bookings : System.Web.UI.Page
     SqlDataAdapter da,da1 = new SqlDataAdapter();
     DataSet ds,ds1;
     string str,str1,pno;
+    private string email;
     int a;
     
     protected void Page_Load(object sender, EventArgs e)
@@ -30,12 +31,16 @@ public partial class dealer_testdrive_bookings : System.Web.UI.Page
             a = int.Parse(ds.Tables[0].Rows[0]["dealerid"].ToString());
 
 
-            str1 = "SELECT distinct tbl_comp.compname, tbl_model.modelname, tbl_testdrive.dealerid,tbl_testdrive.phoneno, tbl_testdrive.date, tbl_testdrive.city, tbl_testdrive.phoneno, tbl_testdrive.last_name, tbl_testdrive.user_name FROM  tbl_comp INNER JOIN  tbl_model ON tbl_comp.compid = tbl_model.compid INNER JOIN tbl_testdrive ON tbl_comp.compid = tbl_testdrive.compid AND tbl_model.modelid = tbl_testdrive.modelid where tbl_testdrive.dealerid=" + a + "";
+            str1 = "SELECT distinct tbl_comp.compname, tbl_model.modelname, tbl_testdrive3.dealerid,tbl_testdrive3.email, tbl_testdrive3.date, tbl_testdrive3.city, tbl_testdrive3.phoneno,tbl_testdrive3.email, tbl_testdrive3.last_name, tbl_testdrive3.user_name FROM  tbl_comp INNER JOIN  tbl_model ON tbl_comp.compid = tbl_model.compid INNER JOIN tbl_testdrive3 ON tbl_comp.compid = tbl_testdrive3.compid AND tbl_model.modelid = tbl_testdrive3.modelid where tbl_testdrive3.dealerid=" + a + "";
             da1 = new SqlDataAdapter(str1, x.cn);
             ds1 = new DataSet();
             da1.Fill(ds1);
-            pno = ds1.Tables[0].Rows[0]["phoneno"].ToString();
-             if (ds1.Tables[0].Rows[0]["date"].ToString() == DateTime.Now.ToString("DD-MM-yy"))
+            //pno = ds1.Tables[0].Rows[0]["phoneno"].ToString();
+            email = ds1.Tables[0].Rows[0]["email"].ToString();
+
+
+
+            if (ds1.Tables[0].Rows[0]["date"].ToString() == DateTime.Now.ToString("DD-MM-yy"))
             {
                 datalist1.EditItemIndex = -1;
 

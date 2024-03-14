@@ -34,11 +34,11 @@ public partial class user_testdrive : System.Web.UI.Page
         x.cnopen();
         
 
-        str = "insert into tbl_testdrive values('" + txtname.Text + "','" + txtlname.Text + "','" + txtphoneno.Text + "'," + ddlcomp.SelectedValue + "," + ddlmodel.SelectedValue + ",'" + ddlcity.SelectedItem + "','" + txtdate.Text + "'," + Label1.Text + ")";
+        str = "insert into tbl_testdrive3 values('" + txtname.Text + "','" + txtlname.Text + "','" + txtemail.Text + "','" + txtphoneno.Text + "'," + ddlcomp.SelectedValue + "," + ddlmodel.SelectedValue + ",'" + ddlcity.SelectedItem + "','" + txtdate.Text + "'," + Label1.Text + ")";
         cmd = new SqlCommand(str, x.cn);
         cmd.ExecuteNonQuery();
 
-        Response.Redirect("~/user/pyment/Pyment.aspx");
+        //Response.Redirect("~/user/pyment/Pyment.aspx");
         //Response.Redirect(string.Format("~/user/pyment/che.aspx?Name={0}&Lname={1}&date={2}", txtname, txtlname.Text, txtdate.Text));
 
 

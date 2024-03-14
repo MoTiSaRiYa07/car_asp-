@@ -62,12 +62,17 @@
 										<h4></h4>
 										<div class="login-top">
 											 <form action="#" method="post">
-                                                <asp:TextBox ID="txtemail" runat="server" class="email" placeholder="Email" required=""></asp:TextBox>
+									<asp:TextBox ID="txtname" runat="server" class="email" placeholder="username" required=""></asp:TextBox>
+
+                                         <asp:TextBox ID="txtemail" runat="server" class="email" placeholder="Email" required=""></asp:TextBox>
+							                  <asp:TextBox ID="txtcommit" runat="server" class="email" required="" placeholder="comment"></asp:TextBox>
+
 												<%--<input name="email" class="email" required="" type="text" placeholder="Email">--%>
-                                                <asp:TextBox ID="txtpass" runat="server" class="password" required="" placeholder="Password"></asp:TextBox>
+<%--                                                <asp:TextBox ID="txtpass" runat="server" class="password" required="" placeholder="Password"></asp:TextBox>--%>
+
 												<%--<input name="password" class="password" required="" type="password" placeholder="Password">--%>	
 												
-												<label for="brand3"><span></span>Get updates on email</label>
+<%--												<label for="brand3"><span></span>Get updates on email</label>--%>
 											</form>
 											</div>
 								

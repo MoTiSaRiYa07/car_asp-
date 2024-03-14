@@ -10,9 +10,10 @@
     <form action="call.aspx" method="post">
         <script
             src="https://checkout.razorpay.com/v1/checkout.js"
-            data-key="rzp_test_FlW43SxAjeEjSl"
+            data-key="key"
             data-amount="<%=amount%>"
             data-name="<%=name%>"
+<%--            data-description="<%=product%>"--%>
             data-order_id="<%=orderId%>"
             data-image="https://razorpay.com/favicon.png"
             data-buttontext="Pay with Razorpay"

@@ -11,7 +11,7 @@
         <div>
 
             <h1 runat="server" id="h1Message"></h1>
-<%--            <p runat="server" id="pOrderId"></p>--%>
+            <p runat="server" id="pOrderId"></p>
                         <p runat="server" id="pTxnId"></p>
             <p> home </p>
             <p><a href="../home.aspx" role="button">home</p>

@@ -44,7 +44,21 @@ public partial class admin_add_company : System.Web.UI.Page
 
     }
 
-    
+    protected void ddlstatus_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        int status = Convert.ToInt32(ddlstatus.SelectedValue);
+
+        if (status == 0)
+        {
+            // Display the image for status 0
+            fu1.Visible = true; // Show the FileUpload control
+        }
+        else if (status == 1)
+        {
+            // Hide the image for status 1
+            fu1.Visible = false; // Hide the FileUpload control
+        }
+    }
 
     protected void btnsubmit_Click(object sender, EventArgs e)
     {
@@ -131,7 +145,8 @@ public partial class admin_add_company : System.Web.UI.Page
                     lblStatus.Text = "Company added successfully.";
                     lblStatus.ForeColor = System.Drawing.Color.Green;
                     lblStatus.Visible = true;
-                   txtcname.BackColor = System.Drawing.Color.Green;
+                    
+                   //txtcname.BackColor = System.Drawing.Color.Green;
 
 
                 }
@@ -182,7 +197,7 @@ public partial class admin_add_company : System.Web.UI.Page
         x.compsele(qry);
 
         GridView1.DataSource = x.ds;
-        GridView1.DataBind();
+        GridView1.DataBind();   
 
     }
 

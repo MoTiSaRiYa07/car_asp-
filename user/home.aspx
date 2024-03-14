@@ -198,7 +198,7 @@
 					  <div class="caption">
 							<h3><a href="show_detail.aspx?compid=<%#Eval("compid") %>&modelid=<%#Eval("modelid") %>">
                                 <asp:Label ID="lbl" runat="server" Text='<%#Eval("compname") %>'></asp:Label> <asp:Label ID="lbl1" runat="server" Text='<%#Eval("modelname") %>'></asp:Label></a></h3>
-							<span>H K</span>
+							<span>CAR SERVIES</span>
 						</div>
 					 </a>
 				 </li>

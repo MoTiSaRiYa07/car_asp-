@@ -14,7 +14,7 @@ public partial class user_pyment_call : System.Web.UI.Page
         try
         {
             string paymentId = Request.Form["razorpay_payment_id"];
-            //string orderId = Request.Form["razorpay_order_id"];
+            string orderId = Request.Form["razorpay_order_id"];
             string signature = Request.Form["razorpay_signature"];
 
             string key = "rzp_test_FlW43SxAjeEjSl";
@@ -25,12 +25,12 @@ public partial class user_pyment_call : System.Web.UI.Page
             Dictionary<string, string> attributes = new Dictionary<string, string>();
 
             attributes.Add("razorpay_payment_id", paymentId);
-            //attributes.Add("razorpay_order_id", orderId);
+            attributes.Add("razorpay_order_id", orderId);
             attributes.Add("razorpay_signature", signature);
 
             Utils.verifyPaymentSignature(attributes);
             pTxnId.InnerText = paymentId;
-            //pOrderId.InnerText = orderId;
+            pOrderId.InnerText = orderId;
             h1Message.InnerText = "Transaction Successfull";
         }
         catch (Exception)
