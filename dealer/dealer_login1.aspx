@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-  <title>H K | Dealer LogIn</title>
+  <title>CAR SERVICE | Dealer LogIn</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Bike Race Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -47,14 +47,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="dealer_home.aspx"><h1>H K</h1></a>
+			<a class="navbar-brand" href="dealer_home.aspx"><h1>CAR SERVICE</h1></a>
         </div>
     <div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav slide-nav">
 				
 				
                 <li><a href="registration.aspx">sign up</a></li>
-               
+                <li><a href="forgot.aspx">ForgotPassword</a></li>
+
                 
 			</ul>
 
@@ -106,6 +107,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                      </br>
                      </br>
+
                      <div class="col-md-12">
                     <%-- <button class="btn btn-primary aos-init aos-animate" type="submit" data-aos="flip-up">Send Message</button>--%>
     <asp:Button ID="btnsubmit" runat="server" Text="Log in" class="btn btn-primary aos-init aos-animate" 
@@ -113,7 +115,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                <br>
                            </div> 
                            
-                            
                            
 </div>
 </div>
@@ -126,7 +127,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <section class="last-w3layouts">
 	<div class="container">
 		<a href="dealer_home.aspx" class="bottom-agile"><h2 class="text-center">H K</h2></a>
-		<p class="text-center">&copy; 2022 H  K. All Rights Reserved </p>
+		<p class="text-center">&copy; CAR SERVICE. All Rights Reserved </p>
 	</div>	
 </section>
 <!-- last section -->

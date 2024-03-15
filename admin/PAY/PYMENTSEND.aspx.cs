@@ -32,7 +32,7 @@ public partial class admin_ankush : System.Web.UI.Page
 
             // Create and configure the email message
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("your@email.com");
+            mail.From = new MailAddress("kingofembroidery@gmail.com");
             mail.To.Add(email);
             mail.Subject = subject;
             mail.Body = message;

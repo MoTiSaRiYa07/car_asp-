@@ -10,7 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="en">
 
 <head>
-	<title>R & M | Forgot Password</title>
+	<title> CAR SERIVES| Forgot Password</title>
 	<!-- Meta tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -92,7 +92,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>	
      </div>
      <ul>
-						<a href="login_signup.aspx" style=" width: 100%;color:black" >Log-In</a> |
+						<a href="Login2.aspx" style=" width: 100%;color:black" >Log-In</a> |
 						<a href="login_signup.aspx" style="width: 100%;color:#f10b59;" >Sign-Up</a>
 						
 					</ul> 

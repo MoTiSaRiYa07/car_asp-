@@ -34,17 +34,27 @@ public partial class dealer_confirm1 : System.Web.UI.Page
         mail.To.Add(mailid);
         mail.From = new MailAddress("kingofembroidery@gmail.com");
         mail.Subject = "Registration";
+        string subject = "DEALER SEND MESSAGE";
         string Body = "TEST DRIVE SUESSFULL BOOK";
         mail.Body = Body;
+        mail.Subject = subject;
         mail.IsBodyHtml = true;
+        try
+        {
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Credentials = new System.Net.NetworkCredential("kingofembroidery@gmail.com", "nhucdvtnfsemscnv");
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.Send(mail);
+            lblsend.Text = "MAIL SEND SUESFULL";
+            Response.Redirect("dealer_home.aspx");
+        }
+        catch (Exception ex)
+        {
+            Response.Write("<script>alert('An error occurred while sending the email. Please try again later.');</script>");
 
-        SmtpClient smtp = new SmtpClient();
-        smtp.Host = "smtp.gmail.com";
-        smtp.Credentials = new System.Net.NetworkCredential("kingofembroidery@gmail.com", "nhucdvtnfsemscnv");
-        smtp.Port = 587;
-        smtp.EnableSsl = true;
-        smtp.Send(mail);
-        Response.Redirect("dealer_home.aspx");
+        }
 
     }
 }

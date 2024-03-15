@@ -32,9 +32,9 @@ public partial class dealer_dealer_contect_us : System.Web.UI.Page
 
 
         MailMessage mail = new MailMessage();
-        string mailid = "krishnasukhadiya24@gmail.com";
+        string mailid = "kingofembroidery@gmail.com";
         mail.To.Add(mailid);
-        mail.From = new MailAddress("krishnasukhadiya24@gmail.com");
+        mail.From = new MailAddress("kingofembroidery@gmail.com");
         mail.Subject = "message from " + txtname.Text;
         string Body = "Name: " + txtname.Text + "<br>" + "Phone no: " + txtpno.Text + "<br>" + "Email :" + txtemail.Text + "<br>" + txtmsg.Text;
         mail.Body = Body;
@@ -42,7 +42,7 @@ public partial class dealer_dealer_contect_us : System.Web.UI.Page
 
         SmtpClient smtp = new SmtpClient();
         smtp.Host = "smtp.gmail.com";
-        smtp.Credentials = new System.Net.NetworkCredential("krishnasukhadiya24@gmail.com", "krishna1920");
+        smtp.Credentials = new System.Net.NetworkCredential("kingofembroidery@gmail.com", "nhucdvtnfsemscnv");
         smtp.Port = 587;
         smtp.EnableSsl = true;
         smtp.Send(mail);

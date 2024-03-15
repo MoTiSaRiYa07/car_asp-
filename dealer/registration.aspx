@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-  <title>H K| Dealer LogIn</title>
+  <title>CAR SERVICE| Dealer LogIn</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Bike Race Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -409,7 +409,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="dealer_home.aspx"><h1>H K</h1></a>
+			<a class="navbar-brand" href="dealer_home.aspx"><h1>CAR SERVICE</h1></a>
         </div>
     <div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav slide-nav">
@@ -429,14 +429,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <section class="inner-w3ls">
     <div class="container">
-		<h3 class="text-center aos-init aos-animate" data-aos="zoom-in">Log in</h3>
+		<h3 class="text-center aos-init aos-animate" data-aos="zoom-in">Signup</h3>
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
                 <ol class="breadcrumb aos-init aos-animate" data-aos="zoom-in">
                     <li><a href="dealer_home.aspx">Home</a>
                     </li>
-                    <li class="active">log in</li>
+                    <li class="active">Signup</li>
                 </ol>
             </div>
         </div>

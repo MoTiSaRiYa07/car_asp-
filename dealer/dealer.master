@@ -10,7 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>CAR SERVIES</title>
+<title>CAR SERVICE</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Bike Race Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -50,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="dealer_home.aspx"><h1>CAR SERIVES</h1></a>
+			<a class="navbar-brand" href="dealer_home.aspx"><h1>CAR SERVICE</h1></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav slide-nav">
@@ -67,12 +67,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="testdrive_bookings.aspx">Manage Bookings</a></li>
 					</ul>
 				</li>
-				<li><a href="dealer_contect-us.aspx">Contact Us  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<li><a href="dealer_contect-us.aspx">Contact Us  &nbsp;
                </a></li>
-                <li><a href="logout.aspx">Log out</a></li>
+
+                <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">PROFILE<b></b></a>
+				<ul class="dropdown-menu">
+        <li><a href="ViewData.aspx">view profile</a></li>
+        <li><a href="logout.aspx">Log out</a></li>
+				</ul>
+                </li>
+<%--             <li><a href="logout.aspx">Log out</a></li>--%>
+
+
                  <%--<li><asp:Label ID="lbldname" runat="server" Text="Label"></asp:Label></li>--%>
                 
 			</ul>
+
 
         </div><!--/.nav-collapse -->		
     </div>
@@ -89,8 +100,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- last section -->
 <section class="last-w3layouts">
 	<div class="container">
-		<a href="dealer_home.aspx" class="bottom-agile"><h2 class="text-center">H K</h2></a>
-		<p class="text-center">&copy; 2022 H K All Rights Reserved | Design by </p>
+		<a href="dealer_home.aspx" class="bottom-agile"><h2 class="text-center">CAR SERVICE</h2></a>
+		<p class="text-center">&copy; TEST DRIVE BOOKING SERVICE | Design by </p>
 	</div>	
 </section>
 <!-- last section -->

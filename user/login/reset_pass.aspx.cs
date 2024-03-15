@@ -21,7 +21,7 @@ public partial class user_login_reser_pass : System.Web.UI.Page
     {
          lbl.Text=Request.QueryString["uid"].ToString();
 
-        str = "SELECT tbl_code.userid, tbl_code.code FROM tbl_code INNER JOIN   tbl_user ON tbl_code.userid = tbl_user.userid WHERE (tbl_code.userid = " + lbl.Text + ")";
+        str = "SELECT tbl_code.userid, tbl_code.code FROM tbl_code INNER JOIN tbl_user ON tbl_code.userid = tbl_user.userid WHERE (tbl_code.userid = " + lbl.Text + ")";
         da = new SqlDataAdapter(str, x.cn);
         ds = new DataSet();
         da.Fill(ds);
