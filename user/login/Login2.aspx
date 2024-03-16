@@ -34,6 +34,47 @@
           transform-style:flat;
      }
  </style>
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btn_login").click(function () {
+            var EmailId = $("#txt_email").val();
+            if ($.trim(EmailId).length == 0) {
+                alert("PLEASE ENTER EMAIL ADDRESS LOGIN ");
+                return false;
+            }
+            if (validateEmailAddress(EmailId)) {
+                return true;
+            }
+            else {
+                alert('Invalid Email Address.Please enter valid email e.g abc@domain.com');
+                return false;
+            }
+        });
+    });
+    function validateEmailAddress(EmailId) {
+        var expr = /^[a-zA-Z0-9._]+[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
+        if (expr.test(EmailId)) {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    $(document).ready(function () {
+        $("#btn_login").click(function () {
+            var password = $("#txt_pass").val().trim();
+            if (!password) {
+                alert("Please enter a password.");
+                return false;
+            }
+        });
+    });
+          
+</script>
 </head>
     
 <body>

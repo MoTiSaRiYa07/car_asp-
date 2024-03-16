@@ -34,7 +34,7 @@ public partial class user_login_f_pass : System.Web.UI.Page
         mail.To.Add(mailid);
         mail.From = new MailAddress("kingofembroidery@gmail.com");
         
-        mail.Subject = "Reset your password";
+        mail.Subject = "USER REST YOUR PASSWORD";
         string code= Convert.ToString(random.Next(100000, 999999));
         string Body = "code: " + code;
         mail.Body = Body;

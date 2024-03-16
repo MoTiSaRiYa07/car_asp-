@@ -1,16 +1,6 @@
 ﻿<%@ Page Language="C#"  MasterPageFile="~/dealer/dealer.master" AutoEventWireup="true" CodeFile="ViewData.aspx.cs" Inherits="dealer_ViewData" %>
  
- 
-
-
-
-
-
-
-
-
-
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+ <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <section id="main-content" style="margin: 29px; padding: 40px; text-align: justify; line-height: 25px; vertical-align: 45px; text-indent: 5px; white-space: normal; word-spacing: normal; background-attachment: fixed; position: static; z-index: inherit; width: auto;">
         <section>
             <div class="row about-w3layouts">
@@ -175,6 +165,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <asp:Button ID="btedit" runat="server" Text="Edit" class="btn btn-primary" OnClick="btedit_Click"></asp:Button>
                 </div>
+                <asp:Label ID="lblmessage" runat="server" Text=""></asp:Label>
             </div>
 
 

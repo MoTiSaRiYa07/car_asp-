@@ -92,10 +92,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>	
      </div>
      <ul>
-						<a href="Login2.aspx" style=" width: 100%;color:black" >Log-In</a> |
+		 	 		 <asp:Label ID="lblMessage" runat="server"></asp:Label>
+
+						<a href="Login2.aspx" style=" width: 100%;color:red" >Log-In</a> |
 						<a href="login_signup.aspx" style="width: 100%;color:#f10b59;" >Sign-Up</a>
-						
 					</ul> 
+
    </form>
 
 </div>

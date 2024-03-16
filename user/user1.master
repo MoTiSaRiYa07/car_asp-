@@ -62,6 +62,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                  <asp:HyperLink ID="hllogin" NavigateUrl="~/user/login/login_signup.aspx" runat="server">Login</asp:HyperLink>
                              <%--<a href="compare.aspx">Login</a>--%>
                              </li> <li>
+
+								        <asp:HyperLink ID="h1profile" NavigateUrl="viewdata.aspx" runat="server">PROFILE</asp:HyperLink>
+   <%--<a href="compare.aspx">Login</a>--%>
+   </li> <li>
+				
                                  <asp:HyperLink ID="hllogout" NavigateUrl="~/user/logout.aspx" runat="server">Logout</asp:HyperLink>
                              <%--<a href="compare.aspx">Logout</a>--%>
                              </li>

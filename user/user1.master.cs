@@ -13,11 +13,13 @@ public partial class user_user1 : System.Web.UI.MasterPage
         {
             hllogin.Visible = true;
             hllogout.Visible = false;
+            h1profile.Visible = false;
         }
         else
         {
             hllogin.Visible = false;
             hllogout.Visible = true;
+            h1profile.Visible=true;
         }
     }
     protected void btnlogout_Click(object sender, EventArgs e)

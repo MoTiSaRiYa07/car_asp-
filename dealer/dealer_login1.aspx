@@ -22,7 +22,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/banner.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- /css -->
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnsubmit").click(function () {
+            var EmailId = $("#txtdname").val();
+            if ($.trim(EmailId).length == 0) {
+                alert("PLEASE ENTER DEALER NAME LOGIN ");
+                return false;
+            }
+           
+        });
+    });
+    
+    $(document).ready(function () {
+        $("#btnsubmit").click(function () {
+            var password = $("#txtpass").val().trim();
+            if (!password) {
+                alert("Please enter a password.");
+                return false;
+            }
+        });
+    });
+
+</script>
 </head>
 <body>
 

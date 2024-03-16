@@ -92,5 +92,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<p>&copy;2018 R & M. All Rights Reserved | Design by </p>
 	</div>
     </form>
+	<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 </body>
 </html>
