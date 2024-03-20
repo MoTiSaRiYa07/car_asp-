@@ -24,6 +24,18 @@ public partial class user_testdrive : System.Web.UI.Page
         }
         else
         {
+            String email = Session["email"].ToString();
+            //str = "select * from tbl_user where email = " + email;
+            str = "select * from tbl_user where email='" + Session["email"] + "' ";
+
+            da = new SqlDataAdapter(str, x.cn);
+            ds = new DataSet();
+            da.Fill(ds);
+            txtname.Text = ds.Tables[0].Rows[0]["name"].ToString();
+            txtlname.Text = ds.Tables[0].Rows[0]["lname"].ToString();
+            txtemail.Text = ds.Tables[0].Rows[0]["email"].ToString();
+           txtphoneno.Text = ds.Tables[0].Rows[0]["phoneno"].ToString();
+
 
 
         }
@@ -40,6 +52,7 @@ public partial class user_testdrive : System.Web.UI.Page
 
         //Response.Redirect("~/user/pyment/Pyment.aspx");
         //Response.Redirect(string.Format("~/user/pyment/che.aspx?Name={0}&Lname={1}&date={2}", txtname, txtlname.Text, txtdate.Text));
+        Response.Write("<script>alert('YOUR TEST DRIVE IS SUCCESSFULLY BOOKED.');</script>");
 
 
 

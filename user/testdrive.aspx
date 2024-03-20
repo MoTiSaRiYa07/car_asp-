@@ -40,7 +40,7 @@
     border: none;
     border-bottom: 2px solid #686464;
     -webkit-appearance: none;
-    font-family: 'Open Sans', sans-serif;" placeholder="Your Name"></asp:TextBox>
+    font-family: 'Open Sans', sans-serif;" placeholder="Your Name" ReadOnly></asp:TextBox>
 					
 					<div class="clearfix"></div>
 				</div>

@@ -95,6 +95,10 @@
                     <asp:Label ID="Label10" runat="server" Text="YOUR PHONE NUMBER===" Font-Bold="True" Font-Names="Algerian" Font-Size="15pt" ForeColor="Black"></asp:Label>
                     <asp:Label ID="Labelcon" runat="server" Font-Bold="True" Font-Names="Algerian" Font-Size="20pt" ForeColor="#FF3300"></asp:Label>
                     <br />
+                     
+ <asp:Label ID="Label3" runat="server" Text="YOUR EMAIL ID===" Font-Bold="True" Font-Names="Algerian" Font-Size="15pt" ForeColor="Black"></asp:Label>
+ <asp:Label ID="lblemail" runat="server" Font-Bold="True" Font-Names="Algerian" Font-Size="20pt" ForeColor="#FF3300"></asp:Label>
+ <br />
                     <asp:Label ID="Label12" runat="server" Text="YOUR  COMPNY ID===" Font-Bold="True" Font-Names="Algerian" Font-Size="15pt" ForeColor="Black"></asp:Label>
                     <asp:Label ID="Labelci" runat="server" Font-Bold="True" Font-Names="Algerian" Font-Size="20pt" ForeColor="#FF3300"></asp:Label>
                     <br />

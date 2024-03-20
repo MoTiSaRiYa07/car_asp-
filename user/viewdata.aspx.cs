@@ -73,15 +73,19 @@ public partial class user_Default : System.Web.UI.Page
             if (rowsAffected > 0)
             {
                 // Update successful
-                lblmesage.Text = "Update successful.";
-                lblmesage.ForeColor = Color.Green;
+                //lblmesage.Text = "Update successful.";
+                //lblmesage.ForeColor = Color.Green;
+                Response.Write("<script>alert('update successfully.');</script>");
+
                 btedit.Visible = true;
             }
             else
             {
                 // No rows were affected, handle the case as needed
-                lblmesage.Text = "No records were updated.";
-                lblmesage.ForeColor = Color.Red;
+                //lblmesage.Text = "No records were updated.";
+                //lblmesage.ForeColor = Color.Red;
+                Response.Write("<script>alert('worg.');</script>");
+
             }
         }
         catch (Exception ex)

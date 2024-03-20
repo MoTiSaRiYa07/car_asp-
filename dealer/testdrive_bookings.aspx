@@ -28,7 +28,7 @@
 						
 		
       <asp:Datalist ID="datalist1" runat="server" RepeatDirection="Horizontal" RepeatColumns="3" 
-                            FooterStyle-BorderWidth="3px" 
+                            FooterStyle-BorderWidth="3px" OnSelectedIndexChanged="datalist1_SelectedIndexChanged" 
                            >
       				
    
@@ -39,7 +39,8 @@
                           <thead align="center" style= "font-size:20px; color:#565656;" >
                         		<tr >
 									  <td align="center"  style=" width:8em;  height:1em; max-height:1em;  padding-top:1em; padding-bottom:1em; padding-right:9em;  "   >
-                                       <asp:Label ID="lbluname"  runat="server" Text='<%#Eval("user_name") %>'></asp:Label>&nbsp<asp:Label ID="lbllname" runat="server" Text='<%#Eval("last_name") %>'></asp:Label></td>
+                                       <asp:Label ID="lbluname"  runat="server" Text='<%#Eval("  user_name") %>'>
+                                       </asp:Label>&nbsp<asp:Label ID="lbllname" runat="server" Text='<%#Eval("last_name") %>'></asp:Label></td>
 								</tr>
 							</thead>
                             <tbody> 

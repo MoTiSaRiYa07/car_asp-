@@ -21,6 +21,8 @@ public partial class dealer_confirm1 : System.Web.UI.Page
     string str, pno,email;
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        String dname = Session["dname"].ToString();
         Label1.Text = Request.QueryString.Get("uname");
         str = "select * from tbl_testdrive3 where user_name='" + Label1.Text + "'";
         da = new SqlDataAdapter(str, x.cn);
@@ -35,7 +37,7 @@ public partial class dealer_confirm1 : System.Web.UI.Page
         mail.From = new MailAddress("kingofembroidery@gmail.com");
         mail.Subject = "Registration";
         string subject = "DEALER SEND MESSAGE";
-        string Body = "TEST DRIVE SUESSFULL BOOK";
+        string Body = "TEST DRIVE SUESSFULL BOOK \n<br> Dealer Name :: " + dname + "<br> Thank You";
         mail.Body = Body;
         mail.Subject = subject;
         mail.IsBodyHtml = true;
@@ -47,8 +49,11 @@ public partial class dealer_confirm1 : System.Web.UI.Page
             smtp.Port = 587;
             smtp.EnableSsl = true;
             smtp.Send(mail);
-            lblsend.Text = "MAIL SEND SUESFULL";
-            Response.Redirect("dealer_home.aspx");
+            //lblsend.Text = "MAIL SEND SUESFULL";
+            Response.Write("<script>alert('TEST DRIVE SUCCFULL SEND MAIL TO USER EMAIL ID ');location.href = 'dealer_home.aspx'</script>");
+            
+
+            //Response.Redirect("dealer_home.aspx");
         }
         catch (Exception ex)
         {

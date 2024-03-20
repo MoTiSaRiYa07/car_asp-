@@ -31,7 +31,7 @@ public partial class admin_Default555 : System.Web.UI.Page
 
         String mycon = "Data Source=JAYRAMAPIR\\SQLEXPRESS04;Initial Catalog=E:\\AUTO MOBILE\\APP_DATA\\DATABASE.MDF;Integrated Security=True;Encrypt=False";
 
-        string myquery = "Select * from tbl_testdrive where testdrive_id=" + TextBox1.Text;
+        string myquery = "Select * from tbl_testdrive3 where testdrive_id=" + TextBox1.Text;
         SqlConnection x = new SqlConnection(mycon);
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = myquery;
@@ -46,6 +46,7 @@ public partial class admin_Default555 : System.Web.UI.Page
             Labelid.Text = TextBox1.Text;
             Labelfn.Text = ds.Tables[0].Rows[0]["user_name"].ToString();
             Labelln.Text = ds.Tables[0].Rows[0]["last_name"].ToString();
+            lblemail.Text = ds.Tables[0].Rows[0]["email"].ToString();
             Labelcon.Text = ds.Tables[0].Rows[0]["phoneno"].ToString();
             Labelci.Text = ds.Tables[0].Rows[0]["compid"].ToString();
             Labelmi.Text = ds.Tables[0].Rows[0]["modelid"].ToString();
@@ -122,8 +123,8 @@ public partial class admin_Default555 : System.Web.UI.Page
                     table.WidthPercentage = 100;
 
                     // Add labels and their corresponding data from the panel
-                    string[] labels = { "Your ENTER ID ", "Your FIRST NAME", "Your LAST NAME", "Your PHONE NUMBER", "Your COMPANY ID", "Your MODEL ID", "Your CITY", "Your BOOKING DATE", "Your DEALER ID" };
-                    Label[] dataLabels = { Labelid, Labelfn, Labelln, Labelcon, Labelci, Labelmi, Labelcity, Labeldate, Labeldid, Label23 };
+                    string[] labels = { "Your ENTER ID ", "Your FIRST NAME", "Your LAST NAME", "Your Email ID", "Your PHONE NUMBER", "Your COMPANY ID", "Your MODEL ID", "Your CITY", "Your BOOKING DATE", "Your DEALER ID" };
+                    Label[] dataLabels = { Labelid, Labelfn, Labelln,lblemail, Labelcon, Labelci, Labelmi, Labelcity, Labeldate, Labeldid, Label23 };
 
                     for (int i = 0; i < labels.Length; i++)
                     {
