@@ -17,6 +17,8 @@ public partial class dealer_confirm1 : System.Web.UI.Page
 {
     myconn x = new myconn();
     SqlDataAdapter da = new SqlDataAdapter();
+    SqlCommand cmd = new SqlCommand();
+
     DataSet ds;
     string str, pno,email;
     protected void Page_Load(object sender, EventArgs e)
@@ -28,6 +30,14 @@ public partial class dealer_confirm1 : System.Web.UI.Page
         da = new SqlDataAdapter(str, x.cn);
         ds = new DataSet();
         da.Fill(ds);
+
+        x.cnopen();
+
+        str = "update tbl_testdrive3 set status = 1 where user_name = '" + Label1.Text + "'";
+        cmd = new SqlCommand(str, x.cn);
+        cmd.ExecuteNonQuery();
+        x.cnclose();
+
 
         //email = ds.Tables[0].Rows[0]["email"].ToString();
         email = Request.QueryString.Get("email");

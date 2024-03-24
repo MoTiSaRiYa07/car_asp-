@@ -16,7 +16,7 @@ public partial class user_find_car : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        qry = "select *  from tbl_comp";
+        qry = "select *  from tbl_comp where status = 0";
         da = new SqlDataAdapter(qry, x.cn);
         ds = new DataSet();
         da.Fill(ds);
