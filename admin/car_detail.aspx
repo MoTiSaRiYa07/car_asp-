@@ -1,5 +1,11 @@
 ﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/admin/MasterPage.master" AutoEventWireup="true" CodeFile="car_detail.aspx.cs" Inherits="admin_car_detail" %>
 
+
+
+
+
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <section id="main-content" style="margin-left: 180px;">
       <section class="wrapper">
@@ -153,8 +159,8 @@
                        <label class="control-label col-lg-2" for="inputSuccess">Transmission</label>
                              <div class="col-lg-10">
                                 <div class="col-lg-3">
-                      <asp:TextBox ID="txttransmissio" runat="server" class="form-control" placeholder="TRansmission"></asp:TextBox>
-                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" Text="Enter transmission"  ForeColor="Red" ControlToValidate="txttransmissio"></asp:RequiredFieldValidator>
+                      <asp:TextBox ID="txttransmissio" runat="server" class="form-control" placeholder="Transmission(1):Automatic(2):Manual"></asp:TextBox>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" Text="Enter Transmission Please value enter (1):Automatic (2):Manual"  ForeColor="Red" ControlToValidate="txttransmissio"></asp:RequiredFieldValidator>
                       </div>
                         </div>
                           </div>
@@ -187,7 +193,7 @@
                               <%-- <button class="btn btn-primary" type="submit">Submit</button>--%>
                               
                                   <asp:Button ID="btnnext" runat="server" Text="Next" 
-                                    class="btn btn-primary" onclick="btnnext_Click"  BackColor="#333333" ></asp:Button>
+                                    class="btn btn-primary" onclick="btnnext_Click"  BackColor="#333333"  ></asp:Button>
                             </div>
               </div>
 

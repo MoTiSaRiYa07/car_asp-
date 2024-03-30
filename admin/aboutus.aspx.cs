@@ -11,7 +11,7 @@ public partial class admin_aboutus : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            StreamReader sr = new StreamReader(Server.MapPath("~/html/HTMLPage.htm"));
+            StreamReader sr = new StreamReader(Server.MapPath("~/html/ab.html"));
             ckeditior.Text = sr.ReadToEnd();
             sr.Close();
             sr.Dispose();
@@ -21,7 +21,7 @@ public partial class admin_aboutus : System.Web.UI.Page
     
     protected void btn_submit_Click(object sender, EventArgs e)
     {
-        StreamWriter sw = new StreamWriter(Server.MapPath("~/html/HTMLPage.htm"));
+        StreamWriter sw = new StreamWriter(Server.MapPath("~/html/ab.html"));
         sw.Write(ckeditior.Text);
         sw.Close();
         sw.Dispose();

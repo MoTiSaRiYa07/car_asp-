@@ -20,16 +20,18 @@ public partial class dealer_dealer_login1 : System.Web.UI.Page
     {
         x.cnopen();
 
-        qry = "select * from tbl_dealer where dealername='" + txtdname.Text + "' and password='" + txtpass.Text + "'";
+        qry = "select * from tbl_dealer where dealername='" +txtdname.Text + "' and password='" + txtpass.Text + "'";
         cmd = new SqlCommand(qry, x.cn);
         dr = cmd.ExecuteReader();
+        //Response.Write("<script>alert('LOGIN SUCCESSFUL');window.location.href = 'dealer_home.aspx';</script>");            //Response.Redirect("~/user/home.aspx");
 
 
 
         if (dr.HasRows)
         {
             Session["dname"] = txtdname.Text;
-            Response.Redirect("dealer_home.aspx");
+            //Response.Redirect("dealer_home.aspx");
+            Response.Write("<script>alert('LOGIN SUCCESSFUL');window.location.href = 'dealer_home.aspx';</script>");            //Response.Redirect("~/user/home.aspx");
 
         }
         else

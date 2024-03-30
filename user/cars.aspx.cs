@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using AjaxControlToolkit.HTMLEditor.ToolbarButton;
 public partial class user_cars : System.Web.UI.Page
 {
     myconn x = new myconn();
@@ -27,14 +28,15 @@ public partial class user_cars : System.Web.UI.Page
             ListView1.DataBind();
             x.cnclose();
         }
-        else if (Request.QueryString["compid"] != null)
+    
+       else if (Request.QueryString["compid"] != null)
         {
             lbl.Text = Request.QueryString.Get("compid").ToString();
-            x.cnopen();
+    x.cnopen();
             str = "SELECT DISTINCT MAX(tbl_car_factors.price) AS Expr1, tbl_car_factors.body_type,tbl_model.modelid,tbl_comp.compid, tbl_model.modelname, tbl_model.image, tbl_comp.compname FROM  tbl_car_factors INNER JOIN    tbl_model ON tbl_car_factors.modelid = tbl_model.modelid INNER JOIN tbl_comp ON tbl_model.compid = tbl_comp.compid WHERE        (tbl_model.compid = " + lbl.Text + ") GROUP BY tbl_car_factors.body_type, tbl_model.modelname, tbl_model.image, tbl_comp.compname,tbl_model.modelid,tbl_comp.compid";
             da = new SqlDataAdapter(str, x.cn);
-            ds = new DataSet();
-            da.Fill(ds);
+    ds = new DataSet();
+    da.Fill(ds);
             ListView1.DataSource = ds.Tables[0];
             ListView1.DataBind();
             x.cnclose();
@@ -46,6 +48,11 @@ public partial class user_cars : System.Web.UI.Page
 
     }
 
+           
+        
+
+    
+
     protected void chkcardetail_SelectedIndexChanged(object sender, EventArgs e)
     {
         x.cnopen();
@@ -56,7 +63,7 @@ public partial class user_cars : System.Web.UI.Page
                 str = "SELECT DISTINCT MAX(tbl_car_factors.price) AS Expr1, tbl_car_factors.body_type,tbl_model.modelid,tbl_comp.compid, tbl_model.modelname, tbl_model.image, tbl_comp.compname FROM  tbl_car_factors INNER JOIN    tbl_model ON tbl_car_factors.modelid = tbl_model.modelid INNER JOIN tbl_comp ON tbl_model.compid = tbl_comp.compid WHERE        (tbl_model.compid = " + item.Value + ") GROUP BY tbl_car_factors.body_type, tbl_model.modelname, tbl_model.image, tbl_comp.compname,tbl_model.modelid,tbl_comp.compid";
                 da = new SqlDataAdapter(str, x.cn);
                 ds = new DataSet();
-                da.Fill(ds);
+                da.Fill(ds);    
                 ListView1.DataSource = ds;
                 ListView1.DataBind();
             }

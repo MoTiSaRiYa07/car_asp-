@@ -13,13 +13,13 @@
             data-key="key"
             data-amount="<%=amount%>"
             data-name="<%=name%>"
-<%--            data-description="<%=product%>"--%>
+            data-description="<%=product%>"
             data-order_id="<%=orderId%>"
             data-image="https://razorpay.com/favicon.png"
             data-buttontext="Pay with Razorpay"
             data-prefill.name="<%=name%>"
             data-prefill.email="<%=email%>"
-<%--            data-prefill.contact="<%=contact%>"--%>
+            data-prefill.contact="<%=contact%>"
             data-theme.color="#F37254">
         </script>
     </form>

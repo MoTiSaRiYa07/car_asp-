@@ -27,7 +27,7 @@ public partial class user_login_Login2 : System.Web.UI.Page
         if (dr.HasRows)
         {
             Session["email"] = txt_email.Text;
-            Response.Redirect("~/user/home.aspx");
+            Response.Write("<script>alert('LOGIN SUCCESSFUL');window.location.href = '/user/home.aspx';</script>");            //Response.Redirect("~/user/home.aspx");
 
         }
         else

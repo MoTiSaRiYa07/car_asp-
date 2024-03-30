@@ -28,7 +28,9 @@ public partial class admin_Default2 : System.Web.UI.Page
         if (dr.HasRows)
         {
             Session["aname"] = txtaname.Text;
-            Response.Redirect("home.aspx");
+            //Response.Redirect("home.aspx");
+            Response.Write("<script>alert('LOGIN SUCCESSFUL');window.location.href = 'home.aspx';</script>");            //Response.Redirect("~/user/home.aspx");
+
 
         }
         else

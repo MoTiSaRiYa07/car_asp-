@@ -28,8 +28,8 @@ public partial class user_pyment_che : System.Web.UI.Page
         input.Add("currency", "INR");
         input.Add("payment_capture", 1);
 
-        string key = "rzp_test_FlW43SxAjeEjSl";
-        string secret = "fKyl37tFaQftg9vjbUEctdGx";
+        string key = "rzp_test_KqP18llvA4wTW0";
+        string secret = "zkb6tzexXXFBcVIGvDo5VDHV";
 
         RazorpayClient client = new RazorpayClient(key, secret);
 

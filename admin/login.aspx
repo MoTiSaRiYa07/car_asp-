@@ -64,7 +64,8 @@
                         
         <label class="checkbox">
                 
-                <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
+               <%-- <span class="pull-right"> <a href="#"> Change
+                    Password?</a></span>--%>
             </label>
         <%--<button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>--%>
           <asp:Button ID="btnlogin" runat="server" Text="Log in" 

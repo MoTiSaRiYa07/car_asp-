@@ -17,8 +17,8 @@ public partial class user_pyment_call : System.Web.UI.Page
             string orderId = Request.Form["razorpay_order_id"];
             string signature = Request.Form["razorpay_signature"];
 
-            string key = "rzp_test_FlW43SxAjeEjSl";
-            string secret = "fKyl37tFaQftg9vjbUEctdGx";
+            string key = "rzp_test_KqP18llvA4wTW0";
+            string secret = "zkb6tzexXXFBcVIGvDo5VDHV";
 
             RazorpayClient client = new RazorpayClient(key, secret);
 

@@ -180,9 +180,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 alert("Please enter a phone number.");
                 return false;
             }
-            var phoneRegex = /^\d{10}$/; // Regular expression for a 10-digit phone number
+            var phoneRegex = /^(\+91[\-\s]?)?[7-9]\d{9}$/; // Regular expression for an Indian phone number
             if (!phoneRegex.test(phoneNumber)) {
-                alert("Please enter a valid 10-digit phone number.");
+                alert("Please enter a valid Indian phone number.");
                 return false;
             }
             return true;
@@ -193,7 +193,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         $("#btnsubmit").click(function () {
             var username = $("#txtfname").val().trim();
             if (!username) {
-                alert("Please enter a username.");
+                alert("Please enter a FirstName.");
                 return false;
             }
             // Minimum and maximum length for the username
@@ -204,9 +204,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 return false;
             }
             // Regular expression for letters, numbers, and underscores
-            var usernameRegex = /^[a-zA-Z0-9_]+$/;
+            var usernameRegex = /^[a-zA-Z]+$/;
             if (!usernameRegex.test(username)) {
-                alert("Username can only contain letters, numbers, and underscores.");
+                alert("FirstName can only contain letters");
                 return false;
             }
             return true;
@@ -228,9 +228,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 return false;
             }
             // Regular expression for letters, numbers, and underscores
-            var username1Regex = /^[a-zA-Z0-9_]+$/;
+            var username1Regex = /^[a-zA-Z]+$/;
             if (!username1Regex.test(username)) {
-                alert("Lastname can only contain letters, numbers, and underscores.");
+                alert("LastName can only contain letters.");
                 return false;
             }
             return true;
@@ -262,29 +262,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
 
 
-    $(document).ready(function () {
-        $("#btnsubmit").click(function () {
-            var username1 = $("#txtaddress").val().trim();
-            if (!username1) {
-                alert("Please enter a  Address .");
-                return false;
-            }
-            // Minimum and maximum length for the username
-            var minLength = 5;
-            var maxLength = 50; // Adjust the maximum length as needed
-            if (username1.length < minLength || username.length > maxLength) {
-                alert("Address are must be between " + minLength + " and " + maxLength + " characters long.");
-                return false;
-            }
-            // Regular expression for letters, numbers, and underscores
-            var username1Regex = /^[a-zA-Z0-9_]+$/;
-            if (!username1Regex.test(username)) {
-                alert("Lastname can only contain letters, numbers, and underscores.");
-                return false;
-            }
-            return true;
-        });
-    });
+    //$(document).ready(function () {
+    //    $("#btnsubmit").click(function () {
+    //        var username1 = $("#txtaddress").val().trim();
+    //        if (!username1) {
+    //            alert("Please enter a  Address .");
+    //            return false;
+    //        }
+    //        // Minimum and maximum length for the username
+    //        var minLength = 5;
+    //        var maxLength = 50; // Adjust the maximum length as needed
+    //        if (username1.length < minLength || username.length > maxLength) {
+    //            alert("Address are must be between " + minLength + " and " + maxLength + " characters long.");
+    //            return false;
+    //        }
+    //        // Regular expression for letters, numbers, and underscores
+    //        var username1Regex = /^[a-zA-Z0-9_]+$/;
+    //        if (!username1Regex.test(username)) {
+    //            alert("Lastname can only contain letters, numbers, and underscores.");
+    //            return false;
+    //        }
+    //        return true;
+    //    });
+    //});
     $(document).ready(function () {
         $("#btnsubmit").click(function () {
             var password = $("#txtpass").val().trim();
@@ -299,21 +299,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 alert("Password must be at least " + minLength + " characters long.");
                 return false;
             }
-            // Strong password regex (at least one lowercase letter, one uppercase letter, one digit, and one special character)
-            var strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+]).{5,}$/;
-            // Medium password regex (at least one letter and one digit)
-            var mediumRegex = /^(?=.*[a-zA-Z])(?=.*\d).{5,}$/;
+            //// Strong password regex (at least one lowercase letter, one uppercase letter, one digit, and one special character)
+            //var strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+]).{5,}$/;
+            //// Medium password regex (at least one letter and one digit)
+            //var mediumRegex = /^(?=.*[a-zA-Z])(?=.*\d).{5,}$/;
 
-            if (strongRegex.test(password)) {
-                alert("Password is strong.");
-                return true;
-            } else if (mediumRegex.test(password)) {
-                alert("Password is medium.");
-                return true;
-            } else {
-                alert("Password is weak. It must contain at least one lowercase letter, one uppercase letter, one digit, and one special character OR at least one letter and one digit.");
-                return false;
-            }
+            //if (strongRegex.test(password)) {
+            //    alert("Password is strong.");
+            //    return true;
+            //} else if (mediumRegex.test(password)) {
+            //    alert("Password is medium.");
+            //    return true;
+            //} else {
+            //    alert("Password is weak. It must contain at least one lowercase letter, one uppercase letter, one digit, and one special character OR at least one letter and one digit.");
+            //    return false;
+            //}
         });
     });
 
@@ -324,27 +324,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 alert("Please enter a  Confirm password.");
                 return false;
             }
-            // Minimum length for the password
-            var minLength = 5;
-            if (password1.length < minLength) {
-                alert("Retypepassword must be at least " + minLength + " characters long.");
-                return false;
-            }
-            // Strong password regex (at least one lowercase letter, one uppercase letter, one digit, and one special character)
-            var strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{5,}$/;
-            // Medium password regex (at least one letter and one digit)
-            var mediumRegex = /^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{5,}$/;
+            //// Minimum length for the password
+            //var minLength = 5;
+            //if (password1.length < minLength) {
+            //    alert("Retypepassword must be at least " + minLength + " characters long.");
+            //    return false;
+            //}
+            //// Strong password regex (at least one lowercase letter, one uppercase letter, one digit, and one special character)
+            //var strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{5,}$/;
+            //// Medium password regex (at least one letter and one digit)
+            //var mediumRegex = /^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{5,}$/;
 
-            if (strongRegex.test(password1)) {
-                alert("Password is strong.");
-                return true;
-            } else if (mediumRegex.test(password1)) {
-                alert("Password is medium.");
-                return true;
-            } else {
-                alert("Password is weak. It must contain at least one lowercase letter, one uppercase letter, one digit, and one special character OR at least one letter and one digit.");
-                return false;
-            }
+            //if (strongRegex.test(password1)) {
+            //    alert("Password is strong.");
+            //    return true;
+            //} else if (mediumRegex.test(password1)) {
+            //    alert("Password is medium.");
+            //    return true;
+            //} else {
+            //    alert("Password is weak. It must contain at least one lowercase letter, one uppercase letter, one digit, and one special character OR at least one letter and one digit.");
+            //    return false;
+            //}
         });
     });
 
@@ -382,6 +382,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 </script>
+
+
+
+    <style type="text/css">
+        .auto-style1 {
+            position: relative;
+            display: table;
+            border-collapse: separate;
+            left: 0px;
+            top: 0px;
+            width: 677px;
+        }
+    </style>
 
 
 
@@ -453,7 +466,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <div class="input-group">
 				<%--	<span class="input-group-btn" id="Span1">@</span>
 --%>					<%--<input class="form-control" aria-describedby="basic-addon1" type="text" placeholder="Username">--%>
-          <asp:TextBox ID="txtfname" runat="server" placeholder="User name" class="form-control" aria-describedby="basic-addon1" required=""></asp:TextBox>
+          <asp:TextBox ID="txtfname" runat="server" placeholder="FirstName" class="form-control" aria-describedby="basic-addon1" required=""></asp:TextBox>
     </div>
 <%--					    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtfname">please! Enter your name</asp:RequiredFieldValidator>--%>
 
@@ -503,17 +516,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         
                              <br /><br /><br />
                        
-                    
+            <%--        
                     <div class="input-group">
-					<%--<span class="input-group-btn" id="Span5">@</span>--%>
-					<%--<input class="form-control" aria-describedby="basic-addon1" type="text" placeholder="Username">--%>
           <asp:TextBox ID="txtaddress" runat="server" placeholder="address" required="" class="form-control" aria-describedby="basic-addon1"></asp:TextBox>
     </div>
-<%--					    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtaddress">please! Enter your address</asp:RequiredFieldValidator>--%>
 
-                               <br /><br /><br />     
+                               <br /><br /><br />     --%>
+    <div class="auto-style1">
+    <asp:DropDownList ID="ddladd" runat="server" CssClass="form-control">
+        <asp:ListItem Text="-- Select CITY --" Value="0"></asp:ListItem>
+                <asp:ListItem Text="Ahmedabad" Value="Ahmedabad"></asp:ListItem>
+        <asp:ListItem Text="Surat" Value="Surat"></asp:ListItem>
+        <asp:ListItem Text="Vadodara" Value="Vadodara"></asp:ListItem>
+        <asp:ListItem Text="Rajkot" Value="Rajkot"></asp:ListItem>
+        <asp:ListItem Text="Amarli" Value="Amarli"></asp:ListItem>
+      <asp:ListItem Text="Navsari" Value="Navsari"></asp:ListItem>
+   <asp:ListItem Text="Veraval" Value="Veraval"></asp:ListItem>
+     <asp:ListItem Text="Bhuj" Value="Bhuj"></asp:ListItem>
+<asp:ListItem Text="Patan" Value="Patan"></asp:ListItem>
+<asp:ListItem Text="Botad" Value="Botad"></asp:ListItem>
+        <asp:ListItem Text="Jamnagar" Value="Jamnagar"></asp:ListItem>
+        <%-- Add more addresses as needed --%>
+    </asp:DropDownList>
+</div>
 
-                     
+
+                                                  <br /><br /><br />
+
 
                           <div class="input-group">
 					<%--<span class="input-group-addon" id="Span2">@</span>--%>

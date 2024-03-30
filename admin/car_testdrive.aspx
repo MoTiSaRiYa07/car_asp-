@@ -13,8 +13,10 @@
 
 
 
-<asp:GridView ID="GridView1" runat="server" BackColor="White" Width="90%"  
-                    BorderStyle="None"  BorderWidth="4px" CellPadding="4" AutoGenerateColumns="False" DataKeyNames="testdrive_id" EmptyDataText="There are no data records to display." DataSourceID="SqlDataSource1"><Columns>
+<asp:GridView ID="GridView1" runat="server" Width="90%" CellPadding="4" AutoGenerateColumns="False" DataKeyNames="testdrive_id" EmptyDataText="There are no data records to display." DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+    <AlternatingRowStyle BackColor="White" />
+    <Columns>
+        <asp:CommandField ShowEditButton="True" />
     <asp:CommandField ShowSelectButton="True" />
 <asp:BoundField DataField="testdrive_id" HeaderText="Test-Drive ID" ReadOnly="True" 
             SortExpression="testdrive_id"></asp:BoundField>
@@ -28,24 +30,28 @@
 <asp:BoundField DataField="city" HeaderText="City" SortExpression="city"></asp:BoundField>
 <asp:BoundField DataField="date" HeaderText="Date" SortExpression="date"></asp:BoundField>
 <asp:BoundField DataField="dealerid" HeaderText="DealerID" SortExpression="dealerid"></asp:BoundField>
+    <asp:BoundField DataField="status" HeaderText="STATUS" SortExpression="status"></asp:BoundField>
+
+        <asp:CommandField CancelText="" EditText="" InsertText="" NewText="" SelectText="" ShowDeleteButton="True" UpdateText="" />
+
 </Columns>
-               <FooterStyle BackColor="White" Font-Names="Arial" ForeColor="#333333" />
-               <HeaderStyle BackColor="#343d3d" Font-Bold="True" Font-Names="Arial" ForeColor="White" />
-               <PagerStyle BackColor="#343d3d" ForeColor="White" HorizontalAlign="Center" />
-               <RowStyle BackColor="White" ForeColor="#333333" Font-Names="Arial" Font-Bold="true" BorderColor="#343d3d" />
-               <SelectedRowStyle BackColor="#339966" Font-Bold="True" Font-Names="Arial" ForeColor="White"    BorderColor="#343d3d" />
-               <SortedAscendingCellStyle BackColor="#F7F7F7" />
-               <SortedAscendingHeaderStyle BackColor="#487575" />
-               <SortedDescendingCellStyle BackColor="#E5E5E5" />
-               <SortedDescendingHeaderStyle BackColor="#275353" />
+               <FooterStyle BackColor="#990000" Font-Names="Arial" ForeColor="White" Font-Bold="True" />
+               <HeaderStyle BackColor="#990000" Font-Bold="True" Font-Names="Arial" ForeColor="White" />
+               <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+               <RowStyle BackColor="#FFFBD6" ForeColor="#333333" Font-Names="Arial" BorderColor="#343d3d" />
+               <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" Font-Names="Arial" ForeColor="Navy"    BorderColor="#343d3d" />
+               <SortedAscendingCellStyle BackColor="#FDF5AC" />
+               <SortedAscendingHeaderStyle BackColor="#4D0000" />
+               <SortedDescendingCellStyle BackColor="#FCF6C0" />
+               <SortedDescendingHeaderStyle BackColor="#820000" />
 
 </asp:GridView>
  <asp:SqlDataSource runat="server" 
         ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
         DeleteCommand="DELETE FROM [tbl_testdrive3] WHERE [testdrive_id] = @testdrive_id" 
-        InsertCommand="INSERT INTO [tbl_testdrive3] ([user_name], [last_name], [email],[phoneno], [compid], [modelid], [city], [date], [dealerid]) VALUES (@user_name, @last_name, @email, @phoneno, @compid, @modelid, @city, @date, @time, @dealerid)" 
-        SelectCommand="SELECT [testdrive_id], [user_name], [last_name], [email], [phoneno], [compid], [modelid], [city], [date], [dealerid] FROM [tbl_testdrive3]" 
-        UpdateCommand="UPDATE [tbl_testdrive3] SET [user_name] = @user_name, [last_name] = @last_name, [email] = @email, [phoneno] = @phoneno, [compid] = @compid, [modelid] = @modelid, [city] = @city, [date] = @date, [dealerid] = @dealerid WHERE [testdrive_id] = @testdrive_id" 
+        InsertCommand="INSERT INTO [tbl_testdrive3] ([user_name], [last_name], [email],[phoneno], [compid], [modelid], [city], [date], [dealerid], [status]) VALUES (@user_name, @last_name, @email, @phoneno, @compid, @modelid, @city, @date, @time, @dealerid, @status)" 
+        SelectCommand="SELECT [testdrive_id], [user_name], [last_name], [email], [phoneno], [compid], [modelid], [city], [date], [dealerid], [status] FROM [tbl_testdrive3]" 
+        UpdateCommand="UPDATE [tbl_testdrive3] SET [user_name] = @user_name, [last_name] = @last_name, [email] = @email, [phoneno] = @phoneno, [compid] = @compid, [modelid] = @modelid, [city] = @city, [date] = @date, [dealerid] = @dealerid , [status] = @status WHERE [testdrive_id] = @testdrive_id" 
         ID="SqlDataSource1"><DeleteParameters>
 <asp:Parameter Name="testdrive_id" Type="Int32"></asp:Parameter>
 </DeleteParameters>
@@ -61,6 +67,8 @@
 <asp:Parameter Name="date" Type="String"></asp:Parameter>
 
 <asp:Parameter Name="dealerid" Type="Int32"></asp:Parameter>
+    <asp:Parameter Name="status" Type="String"></asp:Parameter>
+
 </InsertParameters>
 <UpdateParameters>
 <asp:Parameter Name="user_name" Type="String"></asp:Parameter>
@@ -74,6 +82,8 @@
 <asp:Parameter Name="date" Type="String"></asp:Parameter>
 <asp:Parameter Name="dealerid" Type="Int32"></asp:Parameter>
 <asp:Parameter Name="testdrive_id" Type="Int32"></asp:Parameter>
+        <asp:Parameter Name="status" Type="String"></asp:Parameter>
+
 </UpdateParameters>
 </asp:SqlDataSource>
  

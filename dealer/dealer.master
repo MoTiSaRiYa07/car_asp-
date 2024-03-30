@@ -55,16 +55,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav slide-nav">
 				<li class="active current"><a href="dealer_home.aspx">Home</a></li>
-                <li><a href="dealer_events.aspx">Events</a></li>
-                <li><a href="dealer_news.aspx">News</a></li>
-				<li><a href="dealer_about.aspx">About</a></li>
+                <li><a href="">Events</a></li>
+                <li><a href="">News</a></li>
+				<li><a href="">About</a></li>
 				
 		
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dealer's Corner<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-                        <li><a href="d_add_model.aspx">Manage Cars</a></li>
-                        <li><a href="testdrive_bookings.aspx">Manage Bookings</a></li>
+                        <li><a href="">Manage Cars</a></li>
+                        <li><a href="">Manage Bookings</a></li>
 					</ul>
 				</li>
 				<li><a href="dealer_contect-us.aspx">Contact Us  &nbsp;
@@ -74,7 +74,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">PROFILE<b></b></a>
 				<ul class="dropdown-menu">
         <li><a href="ViewData.aspx">view profile</a></li>
-        <li><a href="logout.aspx">Log out</a></li>
+        <li><a href="change_pass.aspx">ChangePassword</a></li>
+           <li><a href="logout.aspx">Log out</a></li>
 				</ul>
                 </li>
 <%--             <li><a href="logout.aspx">Log out</a></li>--%>

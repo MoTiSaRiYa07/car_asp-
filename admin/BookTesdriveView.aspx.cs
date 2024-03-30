@@ -53,6 +53,8 @@ public partial class admin_Default555 : System.Web.UI.Page
             Labelcity.Text = ds.Tables[0].Rows[0]["city"].ToString();
             Labeldate.Text = ds.Tables[0].Rows[0]["date"].ToString();
             Labeldid.Text = ds.Tables[0].Rows[0]["dealerid"].ToString();
+            lblstu.Text = ds.Tables[0].Rows[0]["status"].ToString();
+
         }
         else
         {
@@ -123,8 +125,8 @@ public partial class admin_Default555 : System.Web.UI.Page
                     table.WidthPercentage = 100;
 
                     // Add labels and their corresponding data from the panel
-                    string[] labels = { "Your ENTER ID ", "Your FIRST NAME", "Your LAST NAME", "Your Email ID", "Your PHONE NUMBER", "Your COMPANY ID", "Your MODEL ID", "Your CITY", "Your BOOKING DATE", "Your DEALER ID" };
-                    Label[] dataLabels = { Labelid, Labelfn, Labelln,lblemail, Labelcon, Labelci, Labelmi, Labelcity, Labeldate, Labeldid, Label23 };
+                    string[] labels = { "Your ENTER ID ", "Your FIRST NAME", "Your LAST NAME", "Your Email ID", "Your PHONE NUMBER", "Your COMPANY ID", "Your MODEL ID", "Your CITY", "Your BOOKING DATE", "Your DEALER ID", "Your STATUS" };
+                    Label[] dataLabels = { Labelid, Labelfn, Labelln,lblemail, Labelcon, Labelci, Labelmi, Labelcity, Labeldate, Labeldid,  lblstu };
 
                     for (int i = 0; i < labels.Length; i++)
                     {

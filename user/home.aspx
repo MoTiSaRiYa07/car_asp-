@@ -27,7 +27,7 @@
                                                <asp:Image ID="img" runat="server"  ImageUrl='<%# "~/admin/upcoming_car/" + Eval("photo") %>'/>
 													<%--<img src="images/f1.jpg" alt="Catchy Carz">--%>
 													<div class="car_description">
-														 <h4><a href="single.html">
+														 <h4><a href="show_detail.aspx">
                                                              <asp:Label ID="lblcomp" runat="server" Text='<%#Eval("comp") %>'></asp:Label>&nbsp;<asp:Label ID="lblmodel" runat="server" Text='<%#Eval("model") %>'></asp:Label>
                                                          <%--Mercedes-Benz C250 CDI--%>
                                                          </a></h4>
@@ -65,7 +65,7 @@
                                                <asp:Image ID="img" runat="server"  ImageUrl='<%# "~/admin/popular/" + Eval("photo") %>'/>
 													<%--<img src="images/f1.jpg" alt="Catchy Carz">--%>
 													<div class="car_description">
-														 <h4><a href="#">
+														 <h4><a href="show_detail.aspx">
                                                              <asp:Label ID="lblcomp" runat="server" Text='<%#Eval("comp") %>'></asp:Label>&nbsp;<asp:Label ID="lblmodel" runat="server" Text='<%#Eval("model") %>'></asp:Label>
                                                          <%--Mercedes-Benz C250 CDI--%>
                                                          </a></h4>
@@ -105,7 +105,7 @@
                                                <asp:Image ID="img" runat="server"  ImageUrl='<%# "~/admin/just_launched/" + Eval("photo") %>'/>
 													<%--<img src="images/f1.jpg" alt="Catchy Carz">--%>
 													<div class="car_description">
-														 <h4><a href="#">
+														 <h4><a href="show_detail.aspx">
                                                              <asp:Label ID="lblcomp" runat="server" Text='<%#Eval("comp") %>'></asp:Label>&nbsp;<asp:Label ID="lblmodel" runat="server" Text='<%#Eval("model") %>'></asp:Label>
                                                          <%--Mercedes-Benz C250 CDI--%>
                                                         </a> </h4>

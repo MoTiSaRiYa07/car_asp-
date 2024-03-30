@@ -113,6 +113,9 @@
                     <br />
                     <asp:Label ID="Label20" runat="server" Text="YOUR DELER ID===" Font-Bold="True" Font-Names="Algerian" Font-Size="15pt" ForeColor="Black"></asp:Label>
                     <asp:Label ID="Labeldid" runat="server" Font-Bold="True" Font-Names="Algerian" Font-Size="20pt" ForeColor="#FF3300"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label24" runat="server" Font-Bold="True" Font-Names="Algerian" Font-Size="15pt" ForeColor="Black" Text="YOUR STATUS==="></asp:Label>
+                    <asp:Label ID="lblstu" runat="server" Font-Bold="True" Font-Names="Algerian" Font-Size="20pt" ForeColor="#FF3300"></asp:Label>
                 </td>
                 <td class="auto-style5" contenteditable="false">
                     

@@ -29,7 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         $("#btnsubmit").click(function () {
             var EmailId = $("#txtdname").val();
             if ($.trim(EmailId).length == 0) {
-                alert("PLEASE ENTER DEALER NAME LOGIN ");
+                alert("PLEASE ENTER DEALERNAME AND LOGIN ");
                 return false;
             }
            
@@ -115,7 +115,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                            <div class="input-group">
 					<%--<span class="input-group-addon" id="basic-addon1">@</span>--%>
 					<%--<input class="form-control" aria-describedby="basic-addon1" type="text" placeholder="Username">--%>
-                               <asp:TextBox ID="txtdname" runat="server" class="form-control" aria-describedby="basic-addon1" placeholder="Dealer name"></asp:TextBox>
+                               <asp:TextBox ID="txtdname" runat="server" class="form-control" aria-describedby="basic-addon1" placeholder="Enter DealerName"></asp:TextBox>
 			            </div>  
    
                                          </br>
@@ -150,7 +150,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <section class="last-w3layouts">
 	<div class="container">
-		<a href="dealer_home.aspx" class="bottom-agile"><h2 class="text-center">H K</h2></a>
+		<a href="dealer_home.aspx" class="bottom-agile"><h2 class="text-center">CAR SERVICE</h2></a>
 		<p class="text-center">&copy; CAR SERVICE. All Rights Reserved </p>
 	</div>	
 </section>
