@@ -27,12 +27,25 @@
      .for1
      {
          text-align:center;
-         color:red;
+         color:white;
           width: 100px;
           height: 100px;
            animation-duration: 4s;
           transform-style:flat;
      }
+         .auto-style1 {
+             width: 25%;
+             display: flex;
+             -webkit-justify-content: space-between;
+             justify-content: space-between;
+             -webkit-flex-direction: column;
+             flex-direction: column;
+             height: 477px;
+             margin-left: 646px;
+             margin-right: auto;
+             margin-top: 0;
+             margin-bottom: 0;
+         }
  </style>
 
  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -82,7 +95,7 @@
 	<h1  class="header-w3ls">
 			CAR SERVICE</h1>
         
-			<div class="mid-cls">
+			<div class="auto-style1">
 <div class="swm-left-w3ls">
 				
 			<div class="main">

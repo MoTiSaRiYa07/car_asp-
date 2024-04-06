@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <section id="main-content" >
 <section class="wrapper">
-        <!--overview start-->
+            <!--overview start-->
         <div class="row">
           <div class="col-lg-12">
             <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
@@ -60,23 +60,28 @@
 
 
         
+        
+     <div class="row">
+   <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box pink-bg">
+              <i class="fa fa-car"></i>
+     <div class="count"><asp:Label ID="lbljust" runat="server" Text="Label"></asp:Label></div>
+      <div class="title">JUST LAUNCHED</div>
+     </div>
+     <!--/.info-box-->
+   </div>
+   <!--/.col-->
+    
 
 
-        <!-- Today status end -->
 
-
-
-        <div class="row">
+<%--        <div class="row">
 
           <div class="col-lg-9 col-md-12">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h2><i class="fa fa-flag-o red"></i><strong>Registered Users</strong></h2>
-                <%--<div class="panel-actions">
-                  <a class="btn-setting" href="index.html#"><i class="fa fa-rotate-right"></i></a>
-                  <a class="btn-minimize" href="index.html#"><i class="fa fa-chevron-up"></i></a>
-                  <a class="btn-close" href="index.html#"><i class="fa fa-times"></i></a>
-                </div>--%>
+              
               </div>
               <div class="panel-body">
                 <table class="table bootstrap-datatable countries">
@@ -84,39 +89,39 @@
                     <tr>
                       
 <%--                      <th>City</th>--%>
-                      <th>Users</th>
+<%--                      <th>Users</th>--%>
 <%--                      <th>dealers</th>--%>
                     
-                    </tr>
+                  <%--  </tr>
                   </thead>
                
                 <asp:DataList ID="dluser" runat="server">
                     <ItemTemplate>
                        <tbody>
                     <tr>
-                   
-                      <td style="  padding: 8px; line-height: 1.4285;vertical-align: top; border-top: 1px solid #dddddd;"><asp:Label ID="lbluser" runat="server" Text='<%#Eval("name") %>'></asp:Label></td>
+                   --%>
+                   <%--   <td style="  padding: 8px; line-height: 1.4285;vertical-align: top; border-top: 1px solid #dddddd;"><asp:Label ID="lbluser" runat="server" Text='<%#Eval("name") %>'></asp:Label></td>
 <%--                     <td style="  padding: 8px; line-height: 1.4285;vertical-align: top; border-top: 1px solid #dddddd;"><asp:Label ID="lbl_dealer" runat="server" Text='<%#Eval("email") %>'></asp:Label></td>--%>
 
                       
 <%--                      <td style="  padding: 8px; line-height: 1.4285;vertical-align: top; border-top: 1px solid #dddddd;"><asp:Label ID="lbl_user" runat="server" Text="Label"></asp:Label></td>--%>
 <%--                      <td style="  padding: 8px; line-height: 1.4285;vertical-align: top; border-top: 1px solid #dddddd;"><asp:Label ID="lbl_dealer" runat="server" Text='<%#Eval("Expr1") %>'></asp:Label></td>--%>
                       
-                    </tr>
+                  <%--  </tr>
                     </tbody>
                     </ItemTemplate>
-                    </asp:DataList>
+                    </asp:DataList>--%>
 
-                </table>
+<%--                </table>
               </div>
 
             </div>
 
-          </div>
+          </div>--%>
           
 
-        </div>
-
+       <%-- </div>
+--%>
 
 
        

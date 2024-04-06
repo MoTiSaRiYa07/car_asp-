@@ -190,7 +190,7 @@
       
            </section>
     
-               <asp:Button ID="Button1" runat="server" Text=" REPORT EXAL CLICK"
+               <asp:Button ID="Button1" runat="server" Text=" REPORT PDF CLICK"
 style="color: red; font-size: 20px; width: 250px; height: 50px; text-align: center; display: block; margin: 0 auto;" OnClick="Button1_Click"/>
 
 </asp:Content>

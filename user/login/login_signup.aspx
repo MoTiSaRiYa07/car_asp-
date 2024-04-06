@@ -35,7 +35,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         {
             text-align:center;
             color:red;
-             width: 100px;
+             width:100px;
              height: 100px;
               animation-duration: 4s;
              transform-style:flat;
@@ -66,6 +66,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             color:red;
             text-align:center;
             font-size:30px;
+        }
+       
+        .auto-style1 {
+            width: 24%;
+            display: flex;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            margin-left: 645px;
+            margin-right: auto;
+            margin-top: 0;
+            margin-bottom: 0;
         }
        
     </style>
@@ -314,51 +327,81 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             var minLength = 5;
             var maxLength = 50;
             var isValid = true;
+            var errorMessage = "";
+
 
             var username = $("#txtname").val().trim();
             if (!username) {
                 alert("Please enter a First name.");
+                //errorMessage = "Please enter a First name.";
+
                 isValid = false;
             } else if (username.length < minLength || username.length > maxLength) {
-                alert("Username must be between " + minLength + " and " + maxLength + " characters long.");
+                //errorMessage = "First name must be between " + minLength + " and " + maxLength + " characters long.";
+                alert("First name must be between " + minLength + " and " + maxLength + " characters long.");
+
                 isValid = false;
             } else {
                 var usernameRegex = /^[a-zA-Z]+$/;
                 if (!usernameRegex.test(username)) {
-                    alert("Username can only contain letters");
+                    //errorMessage = "First Name can only contain letters";
+                    alert("First name can only contain letters");
+
                     isValid = false;
                 }
             }
+            $("#error_txtname").text(errorMessage);
+
 
             if (isValid) {
+                //var lastnameErrorMessage = "";
+                var errorMessage = "";
+
                 var username1 = $("#txtlname").val().trim();
                 if (!username1) {
                     alert("Please enter a Last name.");
+                    //lastnameErrorMessage = "Please enter a Last name.";
+                    errorMessage = "Please enter a Last name.";
+
                     isValid = false;
                 } else if (username1.length < minLength || username1.length > maxLength) {
+                    //errorMessage = "Last name must be between " + minLength + " and " + maxLength + " characters long.";
                     alert("Last name must be between " + minLength + " and " + maxLength + " characters long.");
+
                     isValid = false;
                 } else {
                     var username1Regex = /^[a-zA-Z]+$/;
                     if (!username1Regex.test(username1)) {
-                        alert("Last name can only contain letters");
+                        //errorMessage = "Last name can only contain letters";
+                        alert(" Last name can only contain letters");
+
                         isValid = false;
                     }
                 }
+                $("#error_txtlname").text(errorMessage);
+
             }
 
             if (isValid) {
                 var phoneNumber = $("#txtpno").val().trim();
+                var errorMessage = "";
+
                 if (!phoneNumber) {
                     alert("Please enter a phone number.");
+                    //errorMessage = "Please enter a phone number.";
+
                     isValid = false;
                 } else {
                     var phoneRegex = /^(\+91[\-\s]?)?[7-9]\d{9}$/;
                     if (!phoneRegex.test(phoneNumber)) {
+                        // errorMessage = "Please enter a valid Indian phone number 91+.";
                         alert("Please enter a valid Indian phone number 91+.");
+
                         isValid = false;
                     }
                 }
+                $("#error_txtpno").text(errorMessage);
+
             }
 
 
@@ -446,7 +489,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<h1  class="header-w3ls">
 			CAR SERVICE </h1>
         
-			<div class="mid-cls">
+			<div class="auto-style1">
 <div class="swm-left-w3ls">
 				
 			<div class="main">
@@ -460,29 +503,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </h4>
 					</div>
                 </div>
-                                            <div class="form-left-to-w3l">
+    <div class="form-left-to-w3l">
+    <asp:TextBox ID="txtname" placeholder="FirstName" runat="server"></asp:TextBox>
+    <br />
+    <span id="error_txtname" style="color: red;></span>
+</div>
+<div class="clear"></div>
 
-                                             <asp:TextBox ID="txtname" placeholder="FirstName" runat="server" ></asp:TextBox>
-<%--                                          <asp:Label ID="Label1" runat="server" Text="" ForeColor="red"></asp:Label>--%>
-     
-  
-                                <div class="clear"></div>
-						</div>
-									<div class="form-left-to-w3l">	
+
+<%--									<div class="form-left-to-w3l">	
                                         <asp:TextBox ID="txtlname" placeholder="Last Name" runat="server"></asp:TextBox>
-                                                    <span id="usernameAvailability"></span>
-
-<%--                                   <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtlname" ></asp:RequiredFieldValidator>--%>
 
                             <div class="clear"></div>
-						</div>  
+						</div>  --%>
+
+        <div class="form-left-to-w3l">
+    <asp:TextBox ID="txtlname" placeholder="Last Name" runat="server"></asp:TextBox>
+    <br />
+    <span id="error_txtlname" style="color: red;></span>
+</div>
+<div class="clear"></div>
+
 
                           <div class="form-left-to-w3l ">
                     <asp:TextBox ID="txtpno" placeholder="Phone no" runat="server"></asp:TextBox>
 <%--                              <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtpno" ></asp:RequiredFieldValidator>--%>
-
+    <br />
+    <span id="error_txtpno" style="color: red;></span>
+</div>
                     <div class="clear"></div>
-				</div>
+		
 
 
 
@@ -519,21 +569,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                     <div class="clear"></div>
                 </div>
-       	<div class="form-left-to-w3l">
-	
-               <asp:Button ID="btnotp"  runat="server" Text="SEND OTP" Enabled="False"   Class="btnn"  OnClick="btnotp_Click" Font-Bold="True" Font-Italic="True" ForeColor="#FF6666" Height="35px" Width="304px" />
-
-           <div class="clear"></div>
-       </div>
-
-    <br />
+   <%--    	
     <div class="form-left-to-w3l">
 
 				
     <asp:TextBox ID="txtotp"  placeholder="EnterOtp"  runat="server"></asp:TextBox>
 
     <div class="clear"></div>
-</div>
+</div>--%>
 				<div class="form-left-to-w3l ">
 
 					 <div >
@@ -621,7 +664,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     
 
     </form>
-    <script type="text/javascript">
+  <%--  <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             var txtemail = document.getElementById('txtemail');
             var btnotp = document.getElementById('<%= btnotp.ClientID %>'); // Get button ID in JavaScript
@@ -629,7 +672,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             btnotp.disabled = txtemail.value.trim() === ''; // Disable button if textbox is empty
         });
     });
-</script>
+</script>--%>
 
 
 </body>

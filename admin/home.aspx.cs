@@ -48,15 +48,22 @@ public partial class admin_home : System.Web.UI.Page
         lbluser.Text = ds.Tables[0].Rows[0][0].ToString();
 
 
-        //string str = "SELECT DISTINCT COUNT(dealerid) AS Expr1,address FROM  tbl_dealer GROUP BY address";
-        string str = "SELECT DISTINCT COUNT(userid) AS Expr1,name FROM  tbl_user GROUP BY name";
-        string str1 = "SELECT DISTINCT COUNT(userid) AS Expr1,email FROM  tbl_user GROUP BY email";
-
-        da = new SqlDataAdapter(str, x.cn);
+        string uu = "select count(id) from tbl_just_launched";
+        da = new SqlDataAdapter(uu, x.cn);
         ds = new DataSet();
         da.Fill(ds);
-        dluser.DataSource = ds;
-        dluser.DataBind();
+       lbljust.Text = ds.Tables[0].Rows[0][0].ToString();
+
+
+        ////string str = "SELECT DISTINCT COUNT(dealerid) AS Expr1,address FROM  tbl_dealer GROUP BY address";
+        //string str = "SELECT DISTINCT COUNT(userid) AS Expr1,name FROM  tbl_user GROUP BY name";
+        //string str1 = "SELECT DISTINCT COUNT(userid) AS Expr1,email FROM  tbl_user GROUP BY email";
+
+        //da = new SqlDataAdapter(str, x.cn);
+        //ds = new DataSet();
+        //da.Fill(ds);
+        //dluser.DataSource = ds;
+        //dluser.DataBind();
 
         //string str1 = "SELECT DISTINCT COUNT(dealerid) AS Expr2,fname FROM  tbl_dealer GROUP BY fname";
 

@@ -24,14 +24,14 @@ public partial class user_login_signup : System.Web.UI.Page
     protected void btn_signup_Click(object sender, EventArgs e)
     {
 
-        if (!(txtotp.Text.ToString().Equals(Session["otp"].ToString())))
-        {
-            Response.Write("<script>alert('Invaild OTP.');</script>");
+        //if (!(txtotp.Text.ToString().Equals(Session["otp"].ToString())))
+        //{
+        //    Response.Write("<script>alert('Invaild OTP.');</script>");
 
-            txtotp.BackColor = System.Drawing.Color.Red;
-        }
+        //    txtotp.BackColor = System.Drawing.Color.Red;
+        //}
 
-        else if (Checkname()==true)
+         if (Checkname()==true)
         {
             //lblStatus.Text = "YOUR USER NAME ARE SAME";
             Response.Write("<script>alert('YOUR USER NAME ARE SAME.');</script>");
@@ -181,29 +181,29 @@ public partial class user_login_signup : System.Web.UI.Page
 
    
 
-    protected void btnotp_Click(object sender, EventArgs e)
-    {
-        MailMessage mail = new MailMessage();
+    //protected void btnotp_Click(object sender, EventArgs e)
+    //{
+    //    MailMessage mail = new MailMessage();
 
-        String mailid = txtemail.Text;
-        mail.To.Add(mailid);
-        mail.From = new MailAddress("kingofembroidery@gmail.com");
+    //    String mailid = txtemail.Text;
+    //    mail.To.Add(mailid);
+    //    mail.From = new MailAddress("kingofembroidery@gmail.com");
 
-        mail.Subject = "Registration USer Confirmation OTP";
-        string code = Convert.ToString(random.Next(100000, 999999));
-        string Body = "code: " + code;
-        mail.Body = Body;
-        mail.IsBodyHtml = true;
+    //    mail.Subject = "Registration USer Confirmation OTP";
+    //    string code = Convert.ToString(random.Next(100000, 999999));
+    //    string Body = "code: " + code;
+    //    mail.Body = Body;
+    //    mail.IsBodyHtml = true;
 
-        SmtpClient smtp = new SmtpClient();
-        smtp.Host = "smtp.gmail.com";
-        smtp.Credentials = new System.Net.NetworkCredential("kingofembroidery@gmail.com", "nhucdvtnfsemscnv");
-        smtp.Port = 587;
-        smtp.EnableSsl = true;
-        smtp.Send(mail);
+    //    SmtpClient smtp = new SmtpClient();
+    //    smtp.Host = "smtp.gmail.com";
+    //    smtp.Credentials = new System.Net.NetworkCredential("kingofembroidery@gmail.com", "nhucdvtnfsemscnv");
+    //    smtp.Port = 587;
+    //    smtp.EnableSsl = true;
+    //    smtp.Send(mail);
 
-        Session["otp"] = code;
-    }
+    //    Session["otp"] = code;
+    //}
 
 
 }

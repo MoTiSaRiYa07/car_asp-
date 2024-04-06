@@ -233,7 +233,7 @@ img {
 
 html,
 body {
-    padding: 0;
+    padding:0;
     margin: 0;
     background: #fff;
  font-family: 'Montserrat', sans-serif;
@@ -308,6 +308,8 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     min-height: 100vh;
+    text-align: center;
+    display: block;
 }
 h1.header-w3ls {
     text-align: center;
@@ -342,7 +344,7 @@ h1.header-w3ls {
     text-align: center;
 }
 h2 span.t-w3 {
-    padding: 16px 0px;
+    padding: 500px 0px;
     font-size: 42px;
     color: #f10b59;
 }
@@ -359,7 +361,8 @@ h2 span.t-w3 {
     font-size: 14px;
     padding: .6em .7em;
     margin: 0px 0px 23px;
-    border:none;
+    display: block;
+    border: none;
     -webkit-appearance: none;
     display: inline-block;
     background: rgb(255, 255, 255);

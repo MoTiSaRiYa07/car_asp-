@@ -16,12 +16,12 @@
                                 <div class="col-lg-3">
                                       
                                      <asp:TextBox ID="txtcar" runat="server" class="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Text="Enter company name" ForeColor="Red" ControlToValidate="txcar"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Text="Enter company name" ForeColor="Red" ControlToValidate="txtcar"></asp:RequiredFieldValidator>
                                 </div>
                        </div>
                  </div>
 
-               <br /> <br /> 
+               <br /> <br />
 
                   <div class="form-group">
                        <label class="control-label col-lg-2" for="inputSuccess">Model name</label>
@@ -32,11 +32,9 @@
                                          </div>
                        </div>
                  </div>
-                 <br /> <br /> 
+                 <br /> <br />
 
-               
-
-                   <div class="form-group">
+                <div class="form-group">
                        <label class="control-label col-lg-2" for="inputSuccess">Expected price</label>
                              <div class="col-lg-10">
                                 <div class="col-lg-3">
@@ -45,7 +43,7 @@
                                          </div>
                        </div>
                  </div>
-                 <br /> <br /> 
+                 <br /> <br />
 
                    <div class="form-group">
                        <label class="control-label col-lg-2" for="inputSuccess">Expected launches</label>
@@ -57,7 +55,7 @@
                                          </div>
                        </div>
                  </div>
-                 <br /> <br /> 
+                 <br /> <br />
 
                    <div class="form-group">
                        <label class="control-label col-lg-2" for="inputSuccess">Status</label>
@@ -71,7 +69,7 @@
                             </div>
                         </div>
                            
-                 <br /> <br /> 
+                 <br /> <br />
                  <div class="form-group">
                     <label for="exampleInputFile" class="control-label col-lg-2">Upload Photo</label>
                       <div class="col-lg-10">

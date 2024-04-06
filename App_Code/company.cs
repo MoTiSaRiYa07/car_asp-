@@ -43,5 +43,9 @@ public class company
         da.Fill(ds);
         x.cnclose();
     }
-   
+
+    public DataTable GetDataTable(string query)
+    {
+        throw new NotImplementedException();
+    }
 }

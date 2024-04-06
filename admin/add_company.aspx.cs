@@ -10,6 +10,19 @@ using iTextSharp.text;
 using iTextSharp.text.html.simpleparser;
 using System.Web;
 using System.Xml.Linq;
+using System.Configuration;
+using iText.Layout.Element;
+using iTextSharp.text.pdf.codec;
+using System.Runtime.CompilerServices;
+using System.Windows.Forms.VisualStyles;
+using iText.IO.Image;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.IO.Image;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 
 public partial class admin_add_company : System.Web.UI.Page
@@ -313,23 +326,23 @@ public partial class admin_add_company : System.Web.UI.Page
     protected void Button1_Click(object sender, EventArgs e)
     {
 
-        Response.Clear();
-        Response.Buffer = true;
-        Response.ContentType = "application/ms-excel";
-        Response.AddHeader("content-disposition", "attachment; filename=UserInfo.xls");
-        Response.Charset = "";
-        StringWriter sw = new StringWriter();
-        HtmlTextWriter htw = new HtmlTextWriter(sw);
-        GridView1.RenderControl(htw);
-        Response.Output.Write(sw.ToString());
-        Response.End();
-      
+        //Response.Clear();
+        //Response.Buffer = true;
+        //Response.ContentType = "application/ms-excel";
+        //Response.AddHeader("content-disposition", "attachment; filename=UserInfo.xls");
+        //Response.Charset = "";
+        //StringWriter sw = new StringWriter();
+        //HtmlTextWriter htw = new HtmlTextWriter(sw);
+        //GridView1.RenderControl(htw);
+        //Response.Output.Write(sw.ToString());
+        //Response.End();
+        
+
 
 
     }
 
-
-    public override void VerifyRenderingInServerForm(Control control)
+        public override void VerifyRenderingInServerForm(Control control)
     {
         // Verifies that the control is rendered
     }
