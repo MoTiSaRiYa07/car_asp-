@@ -20,7 +20,7 @@
                                    <asp:ListView ID="lvupcoming" runat="server" >
                                    <ItemTemplate>
                                   
-								  <div class="card effect__hover">
+									  <div class="card effect__hover">
 									
 									  <span class="card__text">
 									       <div class="img-grid">

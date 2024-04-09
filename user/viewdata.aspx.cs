@@ -72,12 +72,13 @@ public partial class user_Default : System.Web.UI.Page
 
             if (rowsAffected > 0)
             {
+
+
                 // Update successful
                 //lblmesage.Text = "Update successful.";
                 //lblmesage.ForeColor = Color.Green;
                 Response.Write("<script>alert('update successfully.');</script>");
 
-                btedit.Visible = true;
             }
             else
             {
@@ -108,7 +109,7 @@ public partial class user_Default : System.Web.UI.Page
         btnupdate.Visible = true;
         txtuname.ReadOnly = false;
         txtlname.ReadOnly = false;
-        txtemail.ReadOnly = false;
+        txtemail.ReadOnly = true;
         txtadd.ReadOnly = false;
         txtcno.ReadOnly = false;
         btedit.Visible = false;

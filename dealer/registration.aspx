@@ -149,237 +149,186 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#btnsubmit").click(function () {
-            var EmailId = $("#txtemail").val();
-            if ($.trim(EmailId).length == 0) {
-                alert("Please Enter Email Address");
-                return false;
-            }
-            if (validateEmailAddress(EmailId)) {
-                return true;
-            }
-            else {
-                alert('Invalid Email Address.Please enter valid email e.g abc@domain.com');
-                return false;
-            }
-        });
-    });
-    function validateEmailAddress(EmailId) {
-        var expr = /^[a-zA-Z0-9._]+[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
-        if (expr.test(EmailId)) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    $(document).ready(function () {
-        $("#btnsubmit").click(function () {
-            var phoneNumber = $("#txtpno").val().trim();
-            if (!phoneNumber) {
-                alert("Please enter a phone number.");
-                return false;
-            }
-            var phoneRegex = /^(\+91[\-\s]?)?[7-9]\d{9}$/; // Regular expression for an Indian phone number
-            if (!phoneRegex.test(phoneNumber)) {
-                alert("Please enter a valid Indian phone number.");
-                return false;
-            }
-            return true;
-        });
-    });
+   
+     $("#btnsubmit").click(function () {
+           
+            var minLength = 5;
+            var maxLength = 50;
+            var isValid = true;
+            var errorMessage = "";
 
-    $(document).ready(function () {
-        $("#btnsubmit").click(function () {
+
             var username = $("#txtfname").val().trim();
             if (!username) {
-                alert("Please enter a FirstName.");
-                return false;
+                alert("Please enter a First name.");
+                //errorMessage = "Please enter a First name.";
+
+                isValid = false;
+            } else if (username.length < minLength || username.length > maxLength) {
+                //errorMessage = "First name must be between " + minLength + " and " + maxLength + " characters long.";
+                alert("First name must be between " + minLength + " and " + maxLength + " characters long.");
+
+                isValid = false;
+            } else {
+                var usernameRegex = /^[a-zA-Z]+$/;
+                if (!usernameRegex.test(username)) {
+                    //errorMessage = "First Name can only contain letters";
+                    alert("First name can only contain letters");
+
+                    isValid = false;
+                }
             }
-            // Minimum and maximum length for the username
-            var minLength = 5;
-            var maxLength = 50; // Adjust the maximum length as needed
-            if (username.length < minLength || username.length > maxLength) {
-                alert("Username must be between " + minLength + " and " + maxLength + " characters long.");
-                return false;
-            }
-            // Regular expression for letters, numbers, and underscores
-            var usernameRegex = /^[a-zA-Z]+$/;
-            if (!usernameRegex.test(username)) {
-                alert("FirstName can only contain letters");
-                return false;
-            }
-            return true;
+
+         if (isValid) {
+             //var lastnameErrorMessage = "";
+             var errorMessage = "";
+
+             var username1 = $("#txtlname").val().trim();
+             if (!username1) {
+                 alert("Please enter a Last name.");
+                 //lastnameErrorMessage = "Please enter a Last name.";
+                 errorMessage = "Please enter a Last name.";
+
+                 isValid = false;
+             } else if (username1.length < minLength || username1.length > maxLength) {
+                 //errorMessage = "Last name must be between " + minLength + " and " + maxLength + " characters long.";
+                 alert("Last name must be between " + minLength + " and " + maxLength + " characters long.");
+
+                 isValid = false;
+             } else {
+                 var username1Regex = /^[a-zA-Z]+$/;
+                 if (!username1Regex.test(username1)) {
+                     //errorMessage = "Last name can only contain letters";
+                     alert(" Last name can only contain letters");
+
+                     isValid = false;
+                 }
+             }
+             $("#error_txtlname").text(errorMessage);
+
+         }
+         if (isValid) {
+             //var lastnameErrorMessage = "";
+             var errorMessage = "";
+
+             var username1 = $("#txtdname").val().trim();
+             if (!username1) {
+                 alert("Please enter a Dealership name.");
+                 //lastnameErrorMessage = "Please enter a Last name.";
+                 //errorMessage = "Please enter a Last name.";
+
+                 isValid = false;
+             } else if (username1.length < minLength || username1.length > maxLength) {
+                 //errorMessage = "Last name must be between " + minLength + " and " + maxLength + " characters long.";
+                 alert("Last name must be between " + minLength + " and " + maxLength + " characters long.");
+
+                 isValid = false;
+             } else {
+                 var username1Regex = /^[a-zA-Z0-9]+$/;
+                 if (!username1Regex.test(username1)) {
+                     alert(" Dealership name can only contain capital small letters and numbers.");
+
+                     isValid = false;
+                 }
+             }
+             $("#error_txtdname").text(errorMessage);
+
+         }
+
+         if (isValid) {
+             var EmailId = $("#txtemail").val().trim();
+             if (!EmailId) {
+                 alert("Please Enter Email Address");
+                 isValid = false;
+             } else {
+                 var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                 if (!emailRegex.test(EmailId)) {
+                     alert('Invalid Email Address. Please enter valid email e.g abc@domain.com');
+                     isValid = false;
+                 }
+             }
+         }
+
+         if (isValid) {
+             var phoneNumber = $("#txtpno").val().trim();
+             var errorMessage = "";
+
+             if (!phoneNumber) {
+                 alert("Please enter a phone number.");
+                 //errorMessage = "Please enter a phone number.";
+
+                 isValid = false;
+             } else {
+                 var phoneRegex = /^(\+91[\-\s]?)?[7-9]\d{9}$/;
+                 if (!phoneRegex.test(phoneNumber)) {
+                     // errorMessage = "Please enter a valid Indian phone number 91+.";
+                     alert("Please enter a valid Indian phone number 91+.");
+
+                     isValid = false;
+                 }
+             }
+             $("#error_txtpno").text(errorMessage);
+
+         }
+
+
+         if (isValid) {
+             var selectedCity = $("#ddladd").val();
+             if (selectedCity == "0") {
+                 alert("Please select a city.");
+                 isValid = false;
+             }
+         }
+
+         if (isValid) {
+             var password = $("#txtpass").val().trim();
+             if (!password) {
+                 alert("Please enter a password.");
+                 isValid = false;
+             } else if (password.length < minLength) {
+                 alert("Password must be at least " + minLength + " characters long.");
+                 isValid = false;
+             }
+         }
+
+
+         if (isValid) {
+             var password1 = $("#txtconpass").val().trim();
+             if (!password1) {
+                 alert("Please enter a Retype password.");
+                 isValid = false;
+             } else if (password1.length < minLength) {
+                 alert("Retype password must be at least " + minLength + " characters long.");
+                 isValid = false;
+             }
+         }
+
+        
+
+         if (isValid) {
+
+             var isValid = true;
+             var file = $("#fu1").val();
+
+             if (file == "") {
+                 alert("Please choose a file.");
+                 isValid = false;
+             } else {
+                 // Get the file extension
+                 var extension = file.split('.').pop().toLowerCase();
+
+                 // Check if the file extension is not jpg or png
+                 if (extension !== 'jpg' && extension !== 'png') {
+                     alert("Please choose a file with a .jpg or .png extension.");
+                     isValid = false;
+                 }
+             }
+         }
+
+
+            return isValid;
         });
     });
-
-    $(document).ready(function () {
-        $("#btnsubmit").click(function () {
-            var username1 = $("#txtlname").val().trim();
-            if (!username1) {
-                alert("Please enter a Last name.");
-                return false;
-            }
-            // Minimum and maximum length for the username
-            var minLength = 5;
-            var maxLength = 50; // Adjust the maximum length as needed
-            if (username1.length < minLength || username.length > maxLength) {
-                alert("Lastname must be between " + minLength + " and " + maxLength + " characters long.");
-                return false;
-            }
-            // Regular expression for letters, numbers, and underscores
-            var username1Regex = /^[a-zA-Z]+$/;
-            if (!username1Regex.test(username)) {
-                alert("LastName can only contain letters.");
-                return false;
-            }
-            return true;
-        });
-    });
-
-    $(document).ready(function () {
-        $("#btnsubmit").click(function () {
-            var username1 = $("#txtdname").val().trim();
-            if (!username1) {
-                alert("Please enter a  Dealership name .");
-                return false;
-            }
-            // Minimum and maximum length for the username
-            var minLength = 5;
-            var maxLength = 50; // Adjust the maximum length as needed
-            if (username1.length < minLength || username.length > maxLength) {
-                alert("Dealership name must be between " + minLength + " and " + maxLength + " characters long.");
-                return false;
-            }
-            // Regular expression for letters, numbers, and underscores
-            var username1Regex = /^[a-zA-Z0-9_]+$/;
-            if (!username1Regex.test(username)) {
-                alert("Lastname can only contain letters, numbers, and underscores.");
-                return false;
-            }
-            return true;
-        });
-    });
-
-
-    //$(document).ready(function () {
-    //    $("#btnsubmit").click(function () {
-    //        var username1 = $("#txtaddress").val().trim();
-    //        if (!username1) {
-    //            alert("Please enter a  Address .");
-    //            return false;
-    //        }
-    //        // Minimum and maximum length for the username
-    //        var minLength = 5;
-    //        var maxLength = 50; // Adjust the maximum length as needed
-    //        if (username1.length < minLength || username.length > maxLength) {
-    //            alert("Address are must be between " + minLength + " and " + maxLength + " characters long.");
-    //            return false;
-    //        }
-    //        // Regular expression for letters, numbers, and underscores
-    //        var username1Regex = /^[a-zA-Z0-9_]+$/;
-    //        if (!username1Regex.test(username)) {
-    //            alert("Lastname can only contain letters, numbers, and underscores.");
-    //            return false;
-    //        }
-    //        return true;
-    //    });
-    //});
-    $(document).ready(function () {
-        $("#btnsubmit").click(function () {
-            var password = $("#txtpass").val().trim();
-            // If password is empty, allow form submission
-            if (!password) {
-                alert("No password entered. Continuing without password validation.");
-                return true;
-            }
-            // Minimum length for the password
-            var minLength = 5; // Adjusted minimum length to 5 characters
-            if (password.length < minLength) {
-                alert("Password must be at least " + minLength + " characters long.");
-                return false;
-            }
-            //// Strong password regex (at least one lowercase letter, one uppercase letter, one digit, and one special character)
-            //var strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+]).{5,}$/;
-            //// Medium password regex (at least one letter and one digit)
-            //var mediumRegex = /^(?=.*[a-zA-Z])(?=.*\d).{5,}$/;
-
-            //if (strongRegex.test(password)) {
-            //    alert("Password is strong.");
-            //    return true;
-            //} else if (mediumRegex.test(password)) {
-            //    alert("Password is medium.");
-            //    return true;
-            //} else {
-            //    alert("Password is weak. It must contain at least one lowercase letter, one uppercase letter, one digit, and one special character OR at least one letter and one digit.");
-            //    return false;
-            //}
-        });
-    });
-
-    $(document).ready(function () {
-        $("#btnsubmit").click(function () {
-            var password1 = $("#txtconpass").val().trim();
-            if (!password1) {
-                alert("Please enter a  Confirm password.");
-                return false;
-            }
-            //// Minimum length for the password
-            //var minLength = 5;
-            //if (password1.length < minLength) {
-            //    alert("Retypepassword must be at least " + minLength + " characters long.");
-            //    return false;
-            //}
-            //// Strong password regex (at least one lowercase letter, one uppercase letter, one digit, and one special character)
-            //var strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{5,}$/;
-            //// Medium password regex (at least one letter and one digit)
-            //var mediumRegex = /^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{5,}$/;
-
-            //if (strongRegex.test(password1)) {
-            //    alert("Password is strong.");
-            //    return true;
-            //} else if (mediumRegex.test(password1)) {
-            //    alert("Password is medium.");
-            //    return true;
-            //} else {
-            //    alert("Password is weak. It must contain at least one lowercase letter, one uppercase letter, one digit, and one special character OR at least one letter and one digit.");
-            //    return false;
-            //}
-        });
-    });
-
-    $(document).ready(function () {
-        $("#btnsubmit").click(function () {
-            var fileInput = $("#fu1")[0];
-            var file = fileInput.files[0];
-
-            // Check if a file is selected
-            if (!file) {
-                alert("Please select a file.");
-                return false;
-            }
-
-            // Check file size (limit to 10MB)
-            var maxSize = 10 * 1024 * 1024; // 10MB in bytes
-            if (file.size > maxSize) {
-                alert("File size exceeds the limit (10MB).");
-                return false;
-            }
-
-            // Check file type (allow only PDF, DOC, and DOCX files)
-            var allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-            if (!allowedTypes.includes(file.type)) {
-                alert("Only PDF, DOC, and DOCX files are allowed.");
-                return false;
-            }
-
-            // File validation passed
-            alert("File is valid.");
-            return true;
-        });
-    });
-    /* user are same*/
-
 
 </script>
 

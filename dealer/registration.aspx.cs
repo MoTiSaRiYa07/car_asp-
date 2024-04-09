@@ -77,14 +77,14 @@ public partial class dealer_registration : System.Web.UI.Page
             }
             else
             {
-                qry = "insert into tbl_dealer values('" + txtfname.Text + "','" + txtlname.Text + "','" + txtdname.Text + "','" + txtemail.Text + "','" + txtpno.Text + "','" + cityName + "','" + txtpass.Text + "','" + txtconpass.Text + "','" + fu1.FileName + "')";
+                qry = "insert into tbl_dealer values('" + txtfname.Text + "','" + txtlname.Text + "','" + txtdname.Text + "','" + txtemail.Text + "','" + txtpno.Text + "','" + cityName + "','" + txtpass.Text + "','" + txtconpass.Text + "','" + fu1.FileName + "' , 0)";
                 x.dealerins(qry);
                 MailMessage mail = new MailMessage();
                 string mailid = txtemail.Text;
                 mail.To.Add(mailid);
                 mail.From = new MailAddress("kingofembroidery@gmail.com");
                 mail.Subject = "Registration";
-                string Body = "welcome to our website";
+                string Body = "WAITING WEBSITE APPORVAL PEDDING";
                 mail.Body = Body;
                 mail.IsBodyHtml = true;
 
@@ -95,7 +95,7 @@ public partial class dealer_registration : System.Web.UI.Page
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
                 //Response.Redirect("dealer_login1.aspx");
-                Response.Write("<script>alert('REGISTRATION SUCCESSFUL');window.location.href = 'dealer_login1.aspx';</script>");            //Response.Redirect("~/user/home.aspx");
+                Response.Write("<script>alert('REGISTRATION WAIT');window.location.href = 'dealer_login1.aspx';</script>");            //Response.Redirect("~/user/home.aspx");
             }
         }
         }
