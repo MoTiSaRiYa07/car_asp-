@@ -287,7 +287,7 @@
                                                     <asp:Image ID="img" runat="server"  alt="" class="img-responsive" ImageUrl='<%# "~/admin/news/" + Eval("photo") %>'/>
 												<%--	<img src="images/u1.jpeg" alt="" class="img-responsive">--%>
 													<div class="mask">
-														<p>CAR<span>&</span>SERIVCE </p>
+														<p>CAR<span>&</span>TEST DRIVE BOOKING</p>
 													</div>
 												</a>	
 											</div>

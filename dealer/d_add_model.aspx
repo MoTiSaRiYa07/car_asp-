@@ -2,6 +2,32 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
+    <script type="text/javascript">
+    function submitForm() {
+        var city = document.getElementById('<%= ddlcomp.ClientID %>').value;
+        var modelCheckboxes = document.querySelectorAll('[id*="cklmodel"] input[type="checkbox"]');
+        var modelChecked = false;
+
+        // Check if at least one checkbox in the checkbox list is checked
+        for (var i = 0; i < modelCheckboxes.length; i++) {
+            if (modelCheckboxes[i].checked) {
+                modelChecked = true;
+                break;
+            }
+        }
+
+        if (city === '') {
+            alert('Please select a company from the dropdown.');
+            return false;
+        } else if (!modelChecked) {
+            alert('Please select at least one model.');
+            return false;
+        }
+
+        return true;
+    </script>
+
+
 <section class="inner-w3ls">
     <div class="container">
 		<h3 class="text-center aos-init aos-animate" data-aos="zoom-in">Add Model</h3>
@@ -82,7 +108,7 @@
                      <div class="col-md-12">
                     <%-- <button class="btn btn-primary aos-init aos-animate" type="submit" data-aos="flip-up">Send Message</button>--%>
     <asp:Button ID="btnsubmit" runat="server" Text="Submit" class="btn btn-primary aos-init aos-animate" 
-                               data-aos="flip-up" onclick="btnsubmit_Click"/>
+                               data-aos="flip-up" onclick="btnsubmit_Click" OnClientClick="return submitForm();"/>
                                <br>
                            </div>  
                            

@@ -1,7 +1,84 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/user/user1.master" AutoEventWireup="true" CodeFile="testdrive.aspx.cs" Inherits="user_testdrive" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/user/user1.master" AutoEventWireup="true" CodeFile="testdrive.aspx.cs" Inherits="user_testdrive" ValidateRequest="true" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-   <form runat="server">
+
+   <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+       <script type="text/javascript">
+           function submitForm() {
+               var city = document.getElementById('<%= ddlcity.ClientID %>').value;
+        var date = document.getElementById('<%= txtdate.ClientID %>').value;
+               var pay = document.getElementById('<%= txtpay.ClientID %>').value;
+
+               if (city === '') {
+                   alert('Please select a city from the dropdown.');
+                   return false;
+               } else if (date === '') {
+                   alert('Please select a date for the test drive.');
+                   return false;
+               }
+               else if (pay === '') {
+                   alert('Please select a payment for the test drive.');
+                   return false;
+               }
+
+               return true;
+           }
+
+           function handlePaymentSuccess(response) {
+               var paymentOrderIdField = document.getElementById('<%= PaymentOrderId.ClientID %>');
+            paymentOrderIdField.value = response.razorpay_order_id;
+
+            var paymentIdField = document.getElementById('<%= PaymentId.ClientID %>');
+            paymentIdField.value = response.razorpay_payment_id;
+
+            document.forms[0].submit();
+        }
+       </script>
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+           <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+               <script>
+                   function OpenPaymentWindow(key, amountInSubunits, currency, name, descritpion, imageLogo, orderId, profileName, profileEmail, profileMobile, notes) {
+                       notes = $.parseJSON(notes);
+                       var options = {
+                           "key": key, // Enter the Key ID generated from the Dashboard
+                           "amount": amountInSubunits, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                           "currency": currency,
+                           "name": name,
+                           "description": descritpion,
+                           "image": imageLogo,
+                           "order_id": orderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                           "handler": function (response) {
+                               //window.location.href = "./pyment/Success.aspx?orderId=" + response.razorpay_order_id + "&paymentId=" + response.razorpay_payment_id;
+                               //alert(response.razorpay_payment_id);
+                               //alert(response.razorpay_order_id);
+                               //alert(response.razorpay_signature)
+                               handlePaymentSuccess(response);
+
+                           },
+                           "prefill": {
+                               "name": profileName,
+                               "email": profileEmail,
+                               "contact": profileMobile
+                           },
+                           "notes": notes,
+                           "theme": {
+                               "color": "#F37254"
+                           }
+                       };
+                       var rzp1 = new Razorpay(options);
+                       rzp1.open();
+                       rzp1.on('payment.failed', function (response) {
+                           console.log(response.error);
+                           alert("Oops, something went wrong and payment failed. Please try again later");
+                       });
+                   }
+
+               </script>
+
+
+
+ <form runat="server">
     <div class="service-breadcrumb">
 				<div class="container">
 					<div class="wthree_service_breadcrumb_left">
@@ -45,7 +122,8 @@
 					<div class="clearfix"></div>
 				</div>
 				<div class="clearfix"></div>
-			</div>		
+			</div>
+<%--                        ==================================--%>
 				 <div class="year">
 				
 				<div>   
@@ -59,7 +137,7 @@
     border-bottom: 2px solid #686464;
     -webkit-appearance: none;
     font-family: 'Open Sans', sans-serif;"
-   ></asp:TextBox>
+   ReadOnly ></asp:TextBox>
 					
 					
 					<div class="clearfix"></div>
@@ -67,28 +145,27 @@
 				<div class="clearfix"></div>
 			</div>
   
-
-                        		<div class="year">
-			
-			<div>
-				
-                <asp:TextBox ID="txtemail" runat="server" required="" 
+<%--                        ==========================================--%>
+                        	 <div class="year">
+	
+	<div>   
+		
+<asp:TextBox ID="txtemail" runat="server" required=""  placeholder="Email"
  style= "outline: none;color: #999;
  padding: 10px 10px 10px 30px;
-margin: 0;
-width: 100%;
-border: none;
-border-bottom: 2px solid #686464;
--webkit-appearance: none;
-font-family: 'Open Sans', sans-serif;" placeholder="email"></asp:TextBox>
-				
-				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
-		</div>		
-			 <div class="year">
-			
-			<div>   
+ margin: 0;
+ width: 100%;
+ border: none;
+ border-bottom: 2px solid #686464;
+ -webkit-appearance: none;
+ font-family: 'Open Sans', sans-serif;"
+ ReadOnly></asp:TextBox>
+		
+		
+		<div class="clearfix"></div>
+	</div>
+	<div class="clearfix"></div>
+</div>
 
       <div class="city">
 				
@@ -103,7 +180,7 @@ font-family: 'Open Sans', sans-serif;" placeholder="email"></asp:TextBox>
     border-bottom: 2px solid #686464;
     -webkit-appearance: none;
     font-family: 'Open Sans', sans-serif;"
-                            ></asp:TextBox>
+                          ReadOnly ></asp:TextBox>
 									</div>
 				<div class="clearfix"></div>
 			</div>
@@ -217,8 +294,7 @@ font-family: 'Open Sans', sans-serif;" placeholder="email"></asp:TextBox>
 				
 				<div>
 						
-                                <asp:Calendar ID="Calendar1" runat="server" 
-                                    onselectionchanged="Calendar1_SelectionChanged" BackColor="White" 
+                                <asp:Calendar ID="Calendar1" runat="server" onselectionchanged="Calendar1_SelectionChanged" BackColor="White"  OnDayRender="Calendar1_DayRender1"
                                     BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" 
                                     ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
                                     <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
@@ -245,16 +321,41 @@ font-family: 'Open Sans', sans-serif;" placeholder="email"></asp:TextBox>
 				<div class="clearfix"></div>
 			</div>
            	
-            
-
+            	 <div class="year">
+	
+	<div>   
+		
+<asp:TextBox ID="txtpay" runat="server" required=""  placeholder="Payment"
+ style= "outline: none;color: #999;
+ padding: 10px 10px 10px 30px;
+ margin: 0;
+ width: 100%;
+ border: none;
+ border-bottom: 2px solid #686464;
+ -webkit-appearance: none;
+ font-family: 'Open Sans', sans-serif;"
+  ReadOnly></asp:TextBox>
+		
+		
+		<div class="clearfix"></div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+  
+                    <asp:Button ID="btnregi" runat="server" Text="PAYNOW" OnClick="btnregi_Click" BackColor="#FFCC99" BorderColor="Fuchsia" Font-Bold="True" Font-Size="Medium" ForeColor="Red" />             
 
 
 
 			<div class="value-button">
-				                <asp:Button ID="btnbook" runat="server" Text="Book" onclick="btnbook_Click" />
+				                <asp:Button ID="btnbook" runat="server" Text="Book" onclick="btnbook_Click" OnClientClick="return submitForm();"/>
 						
 				
 			</div>
+
+                    
+                    <asp:HiddenField ID="PaymentOrderId" runat="server" />
+                    <asp:HiddenField ID="PaymentId" runat="server" />
+
 
 			<div class="clearfix"></div>
 			</div>
@@ -266,7 +367,7 @@ font-family: 'Open Sans', sans-serif;" placeholder="email"></asp:TextBox>
              <h3>Click on select to chhose Dealer</h3>
              </br>
              
-           <asp:GridView ID="GridView1" runat="server" BackColor="White" Width="90%"  
+                  <asp:GridView ID="GridView1" runat="server" BackColor="White" Width="90%"  
                     BorderStyle="None"  BorderWidth="0px" CellPadding="4" DataKeyNames="dealerid" 
                     GridLines="Horizontal" 
                     onselectedindexchanged="GridView1_SelectedIndexChanged" >
@@ -287,7 +388,10 @@ font-family: 'Open Sans', sans-serif;" placeholder="email"></asp:TextBox>
           </br>
           </br>
 
+   
 
                           </form>
 </asp:Content>
+
+
 

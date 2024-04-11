@@ -477,8 +477,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </script>
 
     
-
-    
+ 
 
 
     
@@ -487,8 +486,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 <form runat="server">
 	<h1  class="header-w3ls">
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			CAR SERVICE </h1>
+			&nbsp;CAR SERVICE </h1>
         
 			<div class="auto-style1">
 <div class="swm-left-w3ls">

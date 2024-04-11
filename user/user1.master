@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Catchy Carz a classified ads Category Flat Bootstrap Responsive Website Template | Upcoming Cars :: w3layouts</title>
+<title>CAR TEST DRIVE BOOKING</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -66,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <%--<a href="compare.aspx">Login</a>--%>
    </li> <li>
 				
-	   					        <asp:HyperLink ID="h1change" NavigateUrl="~/user/login/Changpass.aspx" runat="server">CHANGEPASSWORD</asp:HyperLink>
+	   					        <asp:HyperLink ID="h1change" NavigateUrl="~/user/login/Changpass.aspx" runat="server">Change Password</asp:HyperLink>
 <%--<a href="compare.aspx">Login</a>--%>
 </li> <li>
                                  <asp:HyperLink ID="hllogout" NavigateUrl="~/user/logout.aspx" runat="server">Logout</asp:HyperLink>
@@ -103,7 +103,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"></div>
 		    <!--banner-info-->
 			<div class="banner-info">
-			  <h1><a href="home.aspx"> <span class="logo-sub"></span> CAR SERVICE </a></h1>
+			  <h1><a href="home.aspx"> <span class="logo-sub"></span> CAR TEST DRIVE BOOKING </a></h1>
 			    <h2><span>COME LOOK </span> <span>AT THE SELECTION! </span></h2>
 				<p>Eye it – Try it – Buy it!</p>
 			     
@@ -216,10 +216,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 			</div>
 			<div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
-				<h2><a href="home.aspx">CAR SERVICE <span>Eye it – try it – buy it!</span></a></h2>
+				<h2><a href="home.aspx">CAR TEST DRIVE  <span>Eye it – try it – buy it!</span></a></h2>
 			</div>
 			<div class="copy-right animated wow slideInUp" data-wow-delay=".5s">
-				<p>&copy ANKUSH MOTISARIYA && GROP MEMBER | Design by <a href="http://w3layouts.com/"></a></p>
+				<p>&copy CAR TEST DRIVE BOOKING | Design by <a href="http://w3layouts.com/"></a></p>
 			</div>
 		</div>
 	</div>

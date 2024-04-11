@@ -34,7 +34,7 @@
           transform-style:flat;
      }
          .auto-style1 {
-             width: 25%;
+             width: 23%;
              display: flex;
              -webkit-justify-content: space-between;
              justify-content: space-between;
@@ -62,7 +62,7 @@
                 return true;
             }
             else {
-                alert('Invalid Email Address.Please enter valid email e.g abc@domain.com');
+                //alert('Invalid Email Address.Please enter valid email e.g abc@domain.com');
                 return false;
             }
         });
@@ -93,7 +93,7 @@
 <body>
     <form runat="server">
 	<h1  class="header-w3ls">
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			
 			CAR SERVICE</h1>
         
 			<div class="auto-style1">
